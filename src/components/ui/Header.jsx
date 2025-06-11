@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { MenuMobile } from "./MenuMobile";
 function Header() {
     // Responsive Header with mobile menu
-    const [menuOpen, setMenuOpen] = React.useState(false);
 
     return (
         <div className="text-white w-full">
@@ -43,7 +42,7 @@ function Header() {
                                 <a href="#" className="text-white hover:text-gray-400 focus:underline">پیش فروش توکن</a>
                             </li>
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">اماد می مالی</a>
+                                <a href="#" className="text-white hover:text-gray-400 focus:underline">آکادمی مالی</a>
                             </li>
                         </ul>
                     </nav>
@@ -54,36 +53,7 @@ function Header() {
                     </div>
                 </div>
             </header>
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="md:hidden bg-[#1e262c] px-4 pb-4">
 
-                    {/* <nav>
-                        <ul className="flex flex-col space-y-2">
-                            <li>
-                                <a href="#" className="block py-2 text-white hover:text-gray-400 focus:underline">خانه</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 text-white hover:text-gray-400 focus:underline">کیف پول و دارایی</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 text-white hover:text-gray-400 focus:underline">اتصال به ربات</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 text-white hover:text-gray-400 focus:underline">پیش فروش توکن</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 text-white hover:text-gray-400 focus:underline">اماد می مالی</a>
-                            </li>
-                        </ul>
-                        <div className="flex flex-col space-y-2 mt-4">
-                            <Button className="bg-[#1e262c] rounded-2xl w-full">ورود/ثبت نام</Button>
-                            <Button className="bg-[#1e262c] rounded-2xl w-full">زبان</Button>
-                        </div>
-                    </nav> */}
-                    {/* <MenuMobile /> */}
-                </div>
-            )}
         </div>
     );
 }

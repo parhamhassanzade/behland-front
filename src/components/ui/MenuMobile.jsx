@@ -79,7 +79,7 @@ export function MenuMobile() {
                                     href="#"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
-                                    اماد می مالی
+                                    آکادمی مالی
                                 </a>
                             </li>
                         </ul>
