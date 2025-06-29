@@ -2,6 +2,7 @@ import Image from "next/image";
 import Banner from "../../src/assets/Images/banner.jpg";
 import charectors from "../../src/assets/Images/character.png";
 import ColumnBlue from "@/components/ui/ColumnBlue";
+import Services from "@/components/ui/Services";
 export default function Home() {
   return (
     <main className="">
@@ -76,61 +77,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Services />
     </main>
   );
-}
-
-{
-  /* <div className="flex h-screen items-start justify-end relative">
-       
-
-        <ColumnBlue CusStyle={"right-25 bottom-40 -z-8"} />
-        <div className="flex  items-end justify-center w-full h-full absolute bottom-20 left-90 -z-5">
-          <div className="flex  items-center justify-center h-5/6">
-            <h1
-              className=" text-end p-0 m-0 font-extrabold tracking-tighter"
-              style={{
-                fontSize: "120px",
-                background: "linear-gradient(to right, #888, #fff)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                letterSpacing: "0.01em",
-                fontWeight: 900,
-              }}
-            >
-              به لند
-            </h1>
-          </div>
-        </div>
-        <div className="flex  items-end justify-center w-full h-full absolute -bottom-20 left-60 -z-5">
-          <div className="flex  items-center justify-center h-5/6">
-            <h1
-              className=" text-end p-0 m-0 font-extrabold tracking-tighter"
-              style={{
-                fontSize: "150px",
-                background: "linear-gradient(to right, #888, #fff)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                letterSpacing: "-0.02em",
-                fontWeight: 800,
-              }}
-            >
-              EHLAND
-            </h1>
-          </div>
-        </div>
-   
-        <div className="flex items-center justify-center h-full w-3/5 z-1">
-          <Image
-            src={BImage}
-            alt="Behland"
-            style={{ width: "100%", height: "auto", objectFit: "contain" }}
-            sizes="(min-width: 1024px) 60vw, 100vw"
-          />
-        </div>
-
-
-      </div> */
 }

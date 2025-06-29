@@ -73,3 +73,38 @@
 body {
   font-family: 'kalameh', sans-serif;
 }
+
+@keyframes pull {
+  0% {
+    height: 100px;
+    background: #666;
+  }
+
+  50% {
+    height: 120px;
+  }
+
+  100% {
+    height: 100px;
+  }
+}
+
+#turnon:target .light {
+  opacity: 0.2;
+}
+
+#turnon:target .bulb {
+  background: #FAEB83;
+}
+
+#turnon:target .turnoff {
+  display: block;
+}
+
+#turnon:target .lamp {
+  display: none;
+}
+
+#turnon:target .string {
+  animation: pull 500ms;
+}
