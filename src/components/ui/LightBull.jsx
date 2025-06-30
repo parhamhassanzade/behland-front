@@ -4,34 +4,34 @@ import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export default function LightBull() {
-    const { ref, inView } = useInView({
-        threshold: 0.5,
-        triggerOnce: true,
-    });
+    // const { ref, inView } = useInView({
+    //     threshold: 0.5,
+    //     triggerOnce: true,
+    // });
 
-    const [isOn, setIsOn] = useState(false);
-    const [isBlinking, setIsBlinking] = useState(false);
+    const [isOn, setIsOn] = useState(true);
+    // const [isBlinking, setIsBlinking] = useState(false);
 
-    useEffect(() => {
-        if (inView) {
-            setIsBlinking(true);
-            let blinkCount = 0;
-            const interval = setInterval(() => {
-                setIsOn(prev => !prev);
-                blinkCount++;
-                if (blinkCount >= 4) {  // 4 تغییر وضعیت یعنی 2 چشمک کامل
-                    clearInterval(interval);
-                    setIsOn(true);
-                    setIsBlinking(false);
-                }
-            }, 500);
-            return () => clearInterval(interval);
-        }
-    }, [inView]);
+    // useEffect(() => {
+    //     if (inView) {
+    //         setIsBlinking(true);
+    //         let blinkCount = 0;
+    //         const interval = setInterval(() => {
+    //             setIsOn(prev => !prev);
+    //             blinkCount++;
+    //             if (blinkCount >= 4) {  // 4 تغییر وضعیت یعنی 2 چشمک کامل
+    //                 clearInterval(interval);
+    //                 setIsOn(true);
+    //                 setIsBlinking(false);
+    //             }
+    //         }, 500);
+    //         return () => clearInterval(interval);
+    //     }
+    // }, [inView]);
 
     return (
         <div
-            ref={ref}
+            // ref={ref}
             className={`relative flex justify-center items-start transition-all duration-500 ${isOn ? 'blur-0 z-10' : 'blur-[1px] -z-20'
                 } `}
         >
@@ -47,14 +47,14 @@ export default function LightBull() {
                         transition: 'background-color 300ms ease',
                     }}
                 >
-                    {(!isOn || isBlinking) && (
+                    {(isOn) && (
                         <div
                             className="absolute top-full left-1/2 -translate-x-1/2 w-[200px] h-[100px] bg-yellow-200 opacity-20"
                             style={{
                                 clipPath: 'polygon(45% 0%, 55% 0%, 90% 100%, 10% 100%)',
-                                filter: 'blur(8px)',
+                                filter: 'blur(15px)',
                                 transition: 'opacity 300ms ease',
-                                opacity: isOn || isBlinking ? 0.2 : 0,
+                                opacity: isOn ? 0.2 : 0,
                             }}
                         />
                     )}

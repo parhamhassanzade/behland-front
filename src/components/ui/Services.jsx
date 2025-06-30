@@ -28,7 +28,7 @@ function Services() {
             icon: "SupportAgentIcon",
         },
         {
-            title: "نحليل وسيكنال بازار هاى مالى",
+            title: "نحليل سيكنال بازار هاى مالى",
             icon: "CandlestickChartOutlinedIcon",
         },
         {
@@ -50,18 +50,18 @@ function Services() {
 
     return (
         <div className="w-full flex justify-center items-center flex-col gap-2 ">
-            <LightBull />
+            {/* <LightBull /> */}
             <h3 className="text-[#a1c3fd] font-[900]  align-center mt-15 text-2xl">
                 خدمات ما
             </h3>
-            <div className="flex flex-wrap justify-center items-center gap-5 mt-5 w-1/2">
+            <div className="flex flex-wrap justify-center items-center gap-5 mt-5 w-2/3">
                 {Service_list?.map((item, index) => {
                     const IconComponent = iconMap[item.icon] || BarChartIcon;
                     return (
                         <div
                             key={index}
                             className={`border border-[#687378] ${index > 2 ? "border-t-0" : "border-b-0"
-                                } bg-black text-white w-fit h-fit mb-5 flex flex-col justify-center items-center gap-2 p-3 rounded-lg hover:bg-[#687378] transition-all duration-300 cursor-pointer`}
+                                } bg-black text-white w-62 h-fit mb-5 flex flex-col justify-center items-center gap-8 p-3 rounded-lg hover:bg-[#687378] transition-all duration-300 cursor-pointer`}
                         >
                             <IconComponent
                                 sx={{ fontSize: 40 }}
