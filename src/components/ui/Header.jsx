@@ -10,7 +10,7 @@ function Header() {
     // Responsive Header with mobile menu
 
     return (
-        <div className="text-white w-full">
+        <div className="text-white w-full bg-black">
             <header className="flex items-center  p-4">
                 <Avatar className="mx-2">
                     <Image src={logo} alt="Logo" />

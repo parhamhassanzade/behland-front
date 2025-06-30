@@ -50,28 +50,26 @@ function Services() {
 
     return (
         <div className="w-full flex justify-center items-center flex-col gap-2 ">
-            {/* <LightBull /> */}
-            <h3 className="text-[#a1c3fd] font-[900]  align-center mt-15 text-2xl">
+            <h2 className="text-[#a1c3fd] font-[900] align-center mt-15 text-3xl">
                 خدمات ما
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-5 mt-5 w-2/3">
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-5 w-full md:w-4/5 p-8">
                 {Service_list?.map((item, index) => {
                     const IconComponent = iconMap[item.icon] || BarChartIcon;
                     return (
                         <div
                             key={index}
-                            className={`border border-[#687378] ${index > 2 ? "border-t-0" : "border-b-0"
-                                } bg-black text-white w-62 h-fit mb-5 flex flex-col justify-center items-center gap-8 p-3 rounded-lg hover:bg-[#687378] transition-all duration-300 cursor-pointer`}
+                            className="min-w-[200px] border border-[#687378] bg-black text-white flex flex-col justify-center items-center gap-10 p-3 rounded-xl hover:bg-[#687378] transition-all duration-300 cursor-pointer"
                         >
-                            <IconComponent
-                                sx={{ fontSize: 40 }}
-                                className=" text-[#493a2c]"
-                            />
-                            <p>{item.title}</p>
+                            <IconComponent sx={{ fontSize: 60 }} className="text-[#e27a1a]" />
+                            <p className="text-xl md:text-base lg:text-xl whitespace-nowrap">{item.title}</p>
                         </div>
                     );
                 })}
             </div>
+
+
+
         </div>
     );
 }
