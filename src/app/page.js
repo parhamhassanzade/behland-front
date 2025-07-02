@@ -3,6 +3,7 @@ import Banner from "../../src/assets/Images/banner.jpg";
 import charectors from "../../src/assets/Images/character.png";
 import ColumnBlue from "@/components/ui/ColumnBlue";
 import Services from "@/components/ui/Services";
+import Team from "@/components/ui/Team";
 export default function Home() {
   return (
     <main className="">
@@ -78,6 +79,7 @@ export default function Home() {
         </div>
       </div>
       <Services />
+      <Team />
     </main>
   );
 }
