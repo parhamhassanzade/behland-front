@@ -1,77 +1,61 @@
+
 "use client";
 import React from "react";
-import LightBull from "./LightBull";
+import {
+    BarChart,
+    AttachMoney,
+    LocalLibrary,
+    SupportAgent,
+    CandlestickChart,
+    WorkspacePremium,
+} from "@mui/icons-material";
 
-//? icons
-import BarChartIcon from "@mui/icons-material/BarChart";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import CandlestickChartOutlinedIcon from "@mui/icons-material/CandlestickChartOutlined";
-import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
-function Services() {
-    let Service_list = [
-        {
-            title: "سيستم سطح بندى VIP",
-            icon: "BarChartIcon",
-        },
-        {
-            title: "كسب درامد واقعى",
-            icon: "AttachMoneyIcon",
-        },
-        {
-            title: "آموزش بازار هاى مالى",
-            icon: "LocalLibraryIcon",
-        },
-        {
-            title: "مشاوره وهمراهى در بازار",
-            icon: "SupportAgentIcon",
-        },
-        {
-            title: "نحليل سيكنال بازار هاى مالى",
-            icon: "CandlestickChartOutlinedIcon",
-        },
-        {
-            title: " مدرک يايان دوره NFT",
-            icon: "WorkspacePremiumOutlinedIcon",
-        },
-    ];
+const services = [
+    { title: "سيستم سطح بندى VIP", icon: BarChart },
+    { title: "كسب درامد واقعى", icon: AttachMoney },
+    { title: "آموزش بازار هاى مالى", icon: LocalLibrary },
+    { title: "مشاوره وهمراهى در بازار", icon: SupportAgent },
+    { title: "نحليل سيكنال بازار هاى مالى", icon: CandlestickChart },
+    { title: "مدرک پايان دوره NFT", icon: WorkspacePremium },
+];
 
-    // Map icon names to actual components
-    const iconMap = {
-        BarChartIcon: BarChartIcon,
-        AttachMoneyIcon: AttachMoneyIcon,
-        LocalLibraryIcon: LocalLibraryIcon,
-        SupportAgentIcon: SupportAgentIcon,
-        CandlestickChartOutlinedIcon: CandlestickChartOutlinedIcon,
-        WorkspacePremiumOutlinedIcon: WorkspacePremiumOutlinedIcon,
-        // Add more icons here if needed
-    };
-
+export default function Services() {
     return (
-        <div className="w-full flex justify-center items-center flex-col gap-2 ">
-            <h2 className="text-[#a1c3fd] font-[900] align-center mt-15 text-3xl">
-                خدمات ما
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-5 w-full md:w-4/5 p-8">
-                {Service_list?.map((item, index) => {
-                    const IconComponent = iconMap[item.icon] || BarChartIcon;
+        <section className="w-full min-h-screen py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+            <div className="flex flex-col items-center mb-16 gap-5">
+
+                <h2 className="text-4xl text-[#a1c3fd] sm:text-5xl font-bold tracking-tight text-center leading-tight">
+                    خدمات ما
+                </h2>
+                <p className="text-xl text-[#a1c3fd] sm:text-xl font-base tracking-tight text-center leading-tight">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">
+                {services.map((item, i) => {
+                    const Icon = item.icon;
                     return (
                         <div
-                            key={index}
-                            className="min-w-[200px] border border-[#687378] bg-black text-white flex flex-col justify-center items-center gap-10 p-3 rounded-xl hover:bg-[#687378] transition-all duration-300 cursor-pointer"
+                            key={i}
+                            className="relative bg-[#111827]/50 border border-[#ffffff12] rounded-3xl px-6 py-10 shadow-xl hover:shadow-[0_10px_25px_rgba(226,122,26,0.3)] backdrop-blur-md hover:scale-[1.03] transition-all duration-300 group overflow-hidden"
                         >
-                            <IconComponent sx={{ fontSize: 60 }} className="text-[#e27a1a]" />
-                            <p className="text-xl md:text-base lg:text-xl whitespace-nowrap">{item.title}</p>
+                            {/* Decorative glow circle */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#e27a1a] opacity-20 rounded-full blur-2xl z-0 group-hover:opacity-30 transition-opacity"></div>
+
+                            <div className="relative z-10 flex flex-col items-center text-center gap-6">
+                                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[#e27a1a] shadow-lg group-hover:rotate-6 transition-transform">
+                                    <Icon sx={{ fontSize: 32 }} className="text-white" />
+                                </div>
+                                <p className="text-white text-lg font-medium leading-snug">
+                                    {item.title}
+                                </p>
+                            </div>
                         </div>
+
                     );
                 })}
             </div>
-
-
-
-        </div>
+        </section>
     );
 }
-
-export default Services;
