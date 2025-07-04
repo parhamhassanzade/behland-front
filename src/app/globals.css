@@ -108,3 +108,8 @@ body {
 #turnon:target .string {
   animation: pull 500ms;
 }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
