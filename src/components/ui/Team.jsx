@@ -1,21 +1,14 @@
 "use client";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Parham from "../../assets/Images/TeamMemebers/parham.png";
-import Mehdi from "../../assets/Images/TeamMemebers/Mehdi.png";
+
 import Image from "next/image";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
+import { services } from "@/util/Data";
 function Team() {
-    const services = [
-        { title: "Developer", image: Parham, name: "Parham" },
-        { title: "CTO", image: Mehdi, name: "Mehdi" },
-        { title: "Developer", image: Parham, name: "Parham" },
-        { title: "CTO", image: Mehdi, name: "Mehdi" },
-        { title: "Developer", image: Parham, name: "Parham" },
-        { title: "CTO", image: Mehdi, name: "Mehdi" },
-    ];
+
     return (
         <section className="w-full min-h-screen py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center ">
             <div className="flex flex-col items-center mb-16 gap-5">
@@ -28,7 +21,7 @@ function Team() {
             </div>
 
             <div className="w-full h-fit  overflow-x-auto">
-                <div className="flex gap-10 min-w-max px-2 p-14">
+                <div className="flex gap-10 min-w-max px-2 p-14  ">
                     {services.map((item, i) => (
                         <div
                             key={i}
@@ -38,30 +31,21 @@ function Team() {
                             {/* Decorative glow circle */}
                             <div className="hidden group-hover:block group-focus:block absolute -top-10 -right-10 w-32 h-32 bg-[#e27a1a] opacity-20 rounded-full blur-2xl z-0 group-hover:opacity-30 group-focus:opacity-30 transition-opacity"></div>
 
-                            <div className="z-10 flex flex-col items-center text-center gap-6 h-full">
+                            <div className="z-10 flex flex-col items-center text-center  h-full relative">
                                 <Image
                                     src={item.image}
                                     alt="test"
-                                    className="w-full h-full bg-[#e27a1a] shadow-lg group-hover:w-28 group-hover:h-28 group-focus:w-28 group-focus:h-28 transition-all rounded-full object-cover"
+                                    className="w-full h-full bg-[#e27a1a] shadow-lg  transition-all  object-cover rounded-full hover:rounded-lg focus:rounded-lg hover:scale-110 focus:scale-110 transition-transform duration-300"
                                 />
-                                <p className="hidden group-hover:flex group-focus:flex flex-col text-center">
-                                    <span className="text-white font-bold text-lg">
-                                        {item.name}
-                                    </span>
-                                    <br />
-                                    <span className="text-[#a1c3fd] font-base text-sm">
+                                {/* group-hover:w-28 group-hover:h-28 group-focus:w-28 group-focus:h-28 */}
+
+                                <div className="hidden group-hover:flex group-focus:flex flex-col text-center absolute bottom-0 left-0 right-0 bg-[#111827]/20 backdrop-blur-md rounded-b-3xl z-10 m-0 p-0 w-full h-fit">
+                                    <p className="text-white font-bold text-lg">{item.name}</p>
+
+                                    <p className="text-[#a1c3fd] font-base font-bold text-sm">
                                         {item.title}
-                                    </span>
-                                    <br />
-                                    <span className="text-[#a1c3fd] font-base text-sm flex gap-2">
-                                        <Link href={"https://www.google.com"}>
-                                            <TelegramIcon sx={{ cursor: "pointer" }} />
-                                        </Link>
-                                        <Link href={"https://www.google.com"}>
-                                            <LinkedInIcon />
-                                        </Link>
-                                    </span>
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))}
