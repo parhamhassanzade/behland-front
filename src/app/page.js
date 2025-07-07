@@ -4,6 +4,8 @@ import charectors from "../../src/assets/Images/character.png";
 import ColumnBlue from "@/components/ui/ColumnBlue";
 import Services from "@/components/ui/Services";
 import Team from "@/components/ui/Team";
+import RoadmapUI from "@/components/ui/RoadmapUI";
+import WhyUs from "@/components/ui/WhyUs";
 export default function Home() {
   return (
     <main className="">
@@ -80,6 +82,8 @@ export default function Home() {
       </div>
       <Services />
       <Team />
+      <RoadmapUI />
+      <WhyUs />
     </main>
   );
 }

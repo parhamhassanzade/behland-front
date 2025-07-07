@@ -21,7 +21,7 @@ function Team() {
             </div>
 
             <div className="w-full h-fit  overflow-x-auto">
-                <div className="flex gap-10 min-w-max px-2 p-14  ">
+                <div className="flex justify-center gap-10 min-w-max px-2 p-14  ">
                     {services.map((item, i) => (
                         <div
                             key={i}
