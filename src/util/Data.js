@@ -1,12 +1,13 @@
 import Amirali from "../assets/Images/TeamMemebers/Amirali2.png";
 import Mehdi from "../assets/Images/TeamMemebers/Mehdi2.png";
-import Amirhossein from "../assets/Images/TeamMemebers/Amirali.png";
-import Alireza from "../assets/Images/TeamMemebers/Mehrdad.png";
+import Amirhossein from "../assets/Images/TeamMemebers/Amirhossein.png";
 import Nasrin from "../assets/Images/TeamMemebers/Narges.png";
 import Shiva from "../assets/Images/TeamMemebers/Shiva.png";
 import Davood from "../assets/Images/TeamMemebers/David.png";
 import Parham from "../assets/Images/TeamMemebers/parham.png";
 import NargesZ from "../assets/Images/TeamMemebers/Narges.png";
+import Unknown from "../assets/Images/TeamMemebers/Unknown.png";
+import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
 
 export const services = [
     {
@@ -87,6 +88,6 @@ export const services = [
         name: "نرگس زنگنه",
         title: "Graphic Designer (طراح گرافیست)",
         role: [],
-        image: NargesZ,
+        image: Unknown,
     },
 ];

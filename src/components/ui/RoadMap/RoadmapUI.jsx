@@ -1,0 +1,66 @@
+"use client";
+
+import { useState } from "react";
+import TwoWheelerOutlinedIcon from '@mui/icons-material/TwoWheelerOutlined';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Phase1 from './Phase1';
+import Phase2 from './Phase2';
+
+
+export default function RoadmapUI() {
+  const [activeTab, setActiveTab] = useState("phase1");
+  const [fade, setFade] = useState(true);
+
+  const handleTabChange = (value) => {
+    setFade(false);
+    setTimeout(() => {
+      setActiveTab(value);
+      setFade(true);
+    }, 250); // duration of fade out
+  };
+
+  return (
+    <section>
+      <div className="flex flex-col items-center mb-16 gap-5">
+        <h2 className="text-4xl text-[#a1c3fd] sm:text-5xl font-bold tracking-tight text-center leading-tight">
+          نقشه راه پروژه
+        </h2>
+        <p className="text-xl text-[#a1c3fd] sm:text-xl font-base tracking-tight text-center leading-tight">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <Tabs value={activeTab} className="w-full text-white ">
+        <TabsList className="cursor-pointer gap-3 w-full flex justify-center items-center px-5">
+          <TabsTrigger
+            className="cursor-pointer border-b-4 border-gray focus:text-blue-400"
+            value="phase1"
+            onClick={() => handleTabChange("phase1")}
+          >
+            فاز ۱
+          </TabsTrigger>
+          <TabsTrigger
+            className="cursor-pointer border-b-4 border-gray focus:text-blue-400"
+            value="Phase2"
+            onClick={() => handleTabChange("Phase2")}
+          >
+            فاز ۲
+          </TabsTrigger>
+          <TabsTrigger className={"cursor-pointer border-b-4 border-gray  focus:text-blue-400"} value="Phase2">فاز ۳</TabsTrigger>
+          <TabsTrigger className={"cursor-pointer border-b-4 border-gray  focus:text-blue-400"} value="Phase2">فاز ۴</TabsTrigger>
+        </TabsList>
+        <TabsContent value="phase1">
+          <div className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"}`}>
+            <Phase1 />
+          </div>
+        </TabsContent>
+        <TabsContent value="Phase2">
+          <div className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"}`}>
+            <Phase2 />
+          </div>
+        </TabsContent>
+      </Tabs>
+
+
+    </section>
+  );
+}
