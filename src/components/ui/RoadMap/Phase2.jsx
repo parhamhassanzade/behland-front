@@ -5,7 +5,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Card } from "@/components/ui/card";
-import Road from "../Road";
+import Road from "./Road";
 function Phase2() {
     const roadmap = [
         { x: 2, y: 40, title: "ادامه", desc: "تحلیل نیازها", color: "grat" },
@@ -31,7 +31,7 @@ function Phase2() {
                                 <TooltipTrigger asChild>
                                     <div
 
-                                        className={`absolute w-5 h-5  border-2 border-white rounded-full shadow-md hover:scale-110 transition-transform cursor-pointer flex items-center justify-center ${point.color === "green" ? "bg-green-500" : point.color === "orange" ? "bg-orange-500" : "bg-gray-500"}`}
+                                        className={`absolute w-8 h-8  border-2 border-white rounded-full shadow-md hover:scale-110 transition-transform cursor-pointer flex items-center justify-center ${point.color === "green" ? "bg-green-500" : point.color === "orange" ? "bg-orange-500" : "bg-gray-500"}`}
                                         style={{
                                             left: `${point.x}%`,
                                             top: `${point.y}%`,

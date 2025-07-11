@@ -7,13 +7,12 @@ function Road() {
                 viewBox="0 0 1700 200"
                 className="absolute top-0 left-0 w-full h-full z-0"
             >
-                {/* Upper straight line */}
+                {/* Upper curved line - more distance from center */}
                 <path
-                    d="M 0 20 L 1700 20"
+                    d="M 0 40 Q 100 -40, 200 40 T 400 40 T 600 40 T 800 40 T 1000 40 T 1200 40 T 1400 40 T 1600 40"
                     fill="none"
                     stroke="#fff"
-                    strokeWidth="8"
-                    // strokeDasharray="6,6"
+                    strokeWidth="6"
                     strokeLinecap="round"
                 />
                 {/* Main curved line */}
@@ -22,16 +21,15 @@ function Road() {
                     fill="none"
                     stroke="#FFA500"
                     strokeWidth="8"
-                    strokeDasharray="12,8"
+                    strokeDasharray="12,16"
                     strokeLinecap="round"
                 />
-                {/* Lower straight line */}
+                {/* Lower curved line - more distance from center */}
                 <path
-                    d="M 0 180 L 1700 180"
+                    d="M 0 160 Q 100 90, 200 160 T 400 160 T 600 160 T 800 160 T 1000 160 T 1200 160 T 1400 160 T 1600 160"
                     fill="none"
                     stroke="#fff"
-                    strokeWidth="8"
-                    // strokeDasharray="6,6"
+                    strokeWidth="6"
                     strokeLinecap="round"
                 />
             </svg>
