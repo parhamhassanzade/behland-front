@@ -1,4 +1,3 @@
-
 import {
     Tooltip,
     TooltipContent,
@@ -19,10 +18,18 @@ function Phase1() {
     ];
     return (
         <>
-
+            <div className="m-5">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                    esse aspernatur nam, praesentium numquam maiores libero ea neque
+                    odit, magnam mollitia a! Quisquam consectetur consequatur est
+                    deleniti, dolorum unde expedita.
+                </p>
+            </div>
             <TooltipProvider>
-                <div className="w-full flex justify-center items-center overflow-x-auto">
-                    <div className="p-4 relative min-w-[700px] w-[1700px] h-[200px] rounded-xl overflow-hidden shadow-md flex items-center justify-center">
+                <div className="w-full flex  justify-center items-center overflow-x-auto">
+
+                    <div className="p-5 relative min-w-[700px] w-[1700px] h-[200px] rounded-xl overflow-hidden shadow-md flex items-center justify-center">
                         {/* جاده SVG مارپیچ */}
                         <Road />
 
@@ -31,18 +38,23 @@ function Phase1() {
                             <Tooltip key={index}>
                                 <TooltipTrigger asChild>
                                     <div
-
-                                        className={`absolute w-8 h-8  border-2 border-white rounded-full shadow-md hover:scale-110 transition-transform cursor-pointer flex items-center justify-center ${point.color === "green" ? "bg-green-500" : point.color === "orange" ? "bg-orange-500" : "bg-gray-500"}`}
+                                        className={`absolute w-8 h-8  border-2 border-white rounded-full shadow-md hover:scale-110 transition-transform cursor-pointer flex items-center justify-center ${point.color === "green"
+                                            ? "bg-green-500"
+                                            : point.color === "orange"
+                                                ? "bg-orange-500"
+                                                : "bg-gray-500"
+                                            }`}
                                         style={{
                                             left: `${point.x}%`,
                                             top: `${point.y}%`,
                                             transform: "translate(-50%, -50%)",
                                         }}
-                                    >
-
-                                    </div>
+                                    ></div>
                                 </TooltipTrigger>
-                                <TooltipContent side={index % 2 > 0 ? "top" : "bottom"} className="bg-white text-black">
+                                <TooltipContent
+                                    side={index % 2 > 0 ? "top" : "bottom"}
+                                    className="bg-white text-black"
+                                >
                                     <Card className="p-3 text-sm border-none shadow-md">
                                         <h4 className="font-bold">{point.title}</h4>
                                         <p>{point.desc}</p>
@@ -54,7 +66,7 @@ function Phase1() {
                 </div>
             </TooltipProvider>
         </>
-    )
+    );
 }
 
-export default Phase1
+export default Phase1;

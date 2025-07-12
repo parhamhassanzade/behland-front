@@ -18,6 +18,14 @@ function Phase2() {
     ];
     return (
         <>
+            <div className="m-5">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                    esse aspernatur nam, praesentium numquam maiores libero ea neque
+                    odit, magnam mollitia a! Quisquam consectetur consequatur est
+                    deleniti, dolorum unde expedita.
+                </p>
+            </div>
 
             <TooltipProvider>
                 <div className="w-full flex justify-center items-center overflow-x-auto">
