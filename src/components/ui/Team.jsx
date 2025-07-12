@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 import Image from "next/image";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Link from "next/link";
+
 import { services } from "@/util/Data";
 function Team() {
 

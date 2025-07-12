@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import { Avatar } from "@/components/ui/avatar";
-import { AvatarImage } from "@/components/ui/avatar";
 import logo from "../../assets/Images/logo.png"; // Adjust the path as necessary
 import Image from "next/image";
 import { Button } from '@/components/ui/button';

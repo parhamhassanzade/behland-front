@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import TwoWheelerOutlinedIcon from "@mui/icons-material/TwoWheelerOutlined";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Phase1 from "./Phase1";
 import Phase2 from "./Phase2";
