@@ -32,14 +32,14 @@ export default function RoadmapUI() {
         <TabsList className="cursor-pointer gap-3 w-full flex justify-center items-center px-5 mb-5">
           <div className="flex items-center gap-2 w-4/6">
             <TabsTrigger
-              className="cursor-pointer border-b-4 font-bold rounded-2xl p-2 border-gray focus:text-blue-400 flex flex-col items-center"
+              className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="phase1"
               onClick={() => handleTabChange("phase1")}
             >
               فاز ۱<span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border-b-4 font-bold rounded-2xl p-2 border-gray focus:text-blue-400 flex flex-col items-center"
+              className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="Phase2"
               onClick={() => handleTabChange("Phase2")}
             >
@@ -47,14 +47,14 @@ export default function RoadmapUI() {
               <span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border-b-4 font-bold rounded-2xl p-2 border-gray focus:text-blue-400 flex flex-col items-center"
+              className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="Phase2"
             >
               فاز ۳
               <span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border-b-4 font-bold rounded-2xl p-2 border-gray focus:text-blue-400 flex flex-col items-center"
+              className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="Phase2"
             >
               فاز ۴
@@ -62,7 +62,7 @@ export default function RoadmapUI() {
             </TabsTrigger>
 
             <TabsTrigger
-              className="cursor-pointer border-b-4 font-bold rounded-2xl p-2 border-gray focus:text-blue-400 flex flex-col items-center"
+              className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="Phase2"
             >
               فاز ۵
