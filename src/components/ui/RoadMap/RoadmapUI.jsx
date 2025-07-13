@@ -28,8 +28,8 @@ export default function RoadmapUI() {
         </p>
       </div>
       <Tabs value={activeTab} className="w-full text-white ">
-        <TabsList className="cursor-pointer gap-3 w-full flex justify-center items-center px-5 mb-5">
-          <div className="flex items-center gap-2 w-4/6">
+        <TabsList className="cursor-pointer gap-3 w-full flex  justify-center items-center px-5 mb-5">
+          <div className="flex items-center gap-2 overflow-x-auto">
             <TabsTrigger
               className="cursor-pointer border-b-4 font-bold rounded-3xl p-2 border-gray focus:text-blue-400 flex flex-col items-center bg-gradient-to-br from-[#4b5d3a]  to-[#0a2540]"
               value="phase1"
