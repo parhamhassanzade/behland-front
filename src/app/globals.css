@@ -5,6 +5,9 @@
   direction: rtl;;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* Kalameh font faces */
 @font-face {
   font-family: 'kalameh';

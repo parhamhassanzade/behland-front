@@ -29,19 +29,19 @@ function Header() {
                     <nav className="hidden md:block">
                         <ul className="flex space-x-4">
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">خانه</a>
+                                <a href="#home" className="text-white hover:text-gray-400 focus:underline">خانه</a>
                             </li>
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">کیف پول و دارایی</a>
+                                <a href="#services" className="text-white hover:text-gray-400 focus:underline">خدمات ما</a>
                             </li>
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">اتصال به ربات</a>
+                                <a href="#team" className="text-white hover:text-gray-400 focus:underline"> تیم ما </a>
                             </li>
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">پیش فروش توکن</a>
+                                <a href="#roadmap" className="text-white hover:text-gray-400 focus:underline">نقشه راه پروژه</a>
                             </li>
                             <li>
-                                <a href="#" className="text-white hover:text-gray-400 focus:underline">آکادمی مالی</a>
+                                <a href="#whyus" className="text-white hover:text-gray-400 focus:underline">چرا بهلند</a>
                             </li>
                         </ul>
                     </nav>

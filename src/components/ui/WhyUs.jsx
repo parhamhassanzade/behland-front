@@ -6,7 +6,7 @@ import ColumnBlue from './ColumnBlue';
 
 function WhyUs() {
     return (
-        <section>
+        <section id="whyus">
             {/* text section */}
             <div className=" w-full h-fit overflow-hidden p-2 md:p-16 hidden md:block">
                 {/* لایه نور (نور سمت چپ) */}

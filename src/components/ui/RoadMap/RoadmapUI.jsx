@@ -18,7 +18,7 @@ export default function RoadmapUI() {
   };
 
   return (
-    <section>
+    <section id="roadmap">
       <div className="flex flex-col items-center mb-16 gap-5">
         <h2 className="text-4xl text-[#a1c3fd] sm:text-5xl font-bold tracking-tight text-center leading-tight">
           نقشه راه پروژه

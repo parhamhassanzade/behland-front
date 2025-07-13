@@ -8,7 +8,7 @@ import { services } from "@/util/Data";
 function Team() {
 
     return (
-        <section className="w-full min-h-screen py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center ">
+        <section id="team" className="w-full min-h-screen py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center ">
             <div className="flex flex-col items-center mb-16 gap-5">
                 <h2 className="text-4xl text-[#a1c3fd] sm:text-5xl font-bold tracking-tight text-center leading-tight">
                     تیم ما
