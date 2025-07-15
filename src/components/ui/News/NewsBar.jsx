@@ -9,3 +9,5 @@ function NewsBar() {
 }
 
 export default NewsBar
+
+//todo=> npm install embla-carousel-react --save
