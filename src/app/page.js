@@ -9,6 +9,7 @@ import RoadmapUI from "@/components/ui/RoadMap/RoadmapUI";
 import WhyUs from "@/components/ui/WhyUs";
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { useEffect, useState } from "react";
+import NewsBar from "@/components/ui/News/NewsBar";
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
 
@@ -115,6 +116,7 @@ export default function Home() {
       <Team />
       <RoadmapUI />
       <WhyUs />
+      <NewsBar />
     </main>
   );
 

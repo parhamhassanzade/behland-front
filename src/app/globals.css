@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 *{
-  direction: rtl;;
+  direction: rtl;
 }
 
 html {
@@ -115,4 +115,9 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.embla__viewport,
+.embla__container {
+  direction: ltr !important;
 }
