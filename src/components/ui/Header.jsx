@@ -9,7 +9,7 @@ function Header() {
     // Responsive Header with mobile menu
 
     return (
-        <div className="text-white w-full bg-black">
+        <div className="text-white w-full bg-[#F3F6EB] border-b border-gray-200">
             <header className="flex items-center  p-4">
                 <Avatar className="mx-2">
                     <Image src={logo} alt="Logo" />
@@ -26,22 +26,25 @@ function Header() {
                     </button> */}
                     <MenuMobile />
                     {/* Desktop Nav */}
-                    <nav className="hidden md:block">
-                        <ul className="flex space-x-4">
+                    <nav className="hidden md:block text-[#2D1F44]">
+                        <ul className="flex space-x-4 font-bold">
                             <li>
-                                <a href="#home" className="text-white hover:text-gray-400 focus:underline">خانه</a>
+                                <a href="#home" className=" hover:text-gray-400 focus:underline">خانه</a>
                             </li>
                             <li>
-                                <a href="#services" className="text-white hover:text-gray-400 focus:underline">خدمات ما</a>
+                                <a href="#services" className=" hover:text-gray-400 focus:underline">خدمات ما</a>
                             </li>
                             <li>
-                                <a href="#team" className="text-white hover:text-gray-400 focus:underline"> تیم ما </a>
+                                <a href="#team" className=" hover:text-gray-400 focus:underline"> تیم ما </a>
                             </li>
                             <li>
-                                <a href="#roadmap" className="text-white hover:text-gray-400 focus:underline">نقشه راه پروژه</a>
+                                <a href="#roadmap" className=" hover:text-gray-400 focus:underline">نقشه راه پروژه</a>
                             </li>
                             <li>
-                                <a href="#whyus" className="text-white hover:text-gray-400 focus:underline">چرا بهلند</a>
+                                <a href="#whyus" className=" hover:text-gray-400 focus:underline">چرا بهلند</a>
+                            </li>
+                            <li>
+                                <a href="#whyus" className=" hover:text-gray-400 focus:underline">اخبار</a>
                             </li>
                         </ul>
                     </nav>

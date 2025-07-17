@@ -11,7 +11,7 @@ import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
 export const services = [
     {
         name: "امیرعلی نیرومند",
-        title: "Founder & CEO (بنیان‌گذار و مدیرعامل)",
+        title: "Founder & CEO",
         role: [
             "مسئول نظارت کلی",
             "مدیریت استراتژیک پروژه",
@@ -21,7 +21,7 @@ export const services = [
     },
     {
         name: "مهدی خسروی",
-        title: "Technical Lead (مدیر فنی)",
+        title: "Technical Lead ",
         role: [
             "مسئول توسعه ربات تلگرام",
             "مدیریت زیرساخت فنی",
@@ -30,13 +30,13 @@ export const services = [
     },
     {
         name: "پرهام حسن‌زاده",
-        title: "Senior Web Designer (طراح ارشد سایت)",
+        title: "Senior Web Designer ",
         role: [],
         image: Parham,
     },
     {
         name: "امیرحسین اسدیار",
-        title: "Content & Market Analysis Lead (مدیر محتوای تحلیلی و تحلیل بازار)",
+        title: "Content & Market Analysis Lead ",
         role: [
             "تدوین تحلیل‌های بازار",
             "سیگنال‌دهی",
@@ -46,7 +46,7 @@ export const services = [
     },
     {
         name: "علیرضا نیرومند",
-        title: "Educational Content Lead (مدیر محتوای آموزشی)",
+        title: "Educational Content Lead ",
         role: [
             "طراحی دوره‌های آموزشی",
             "تدوین مسیر رشد کاربران",
@@ -55,7 +55,7 @@ export const services = [
     },
     {
         name: "نسرین قادری",
-        title: "Project Coordinator & Documentation Specialist (هماهنگ‌کننده پروژه و مسئول مستندسازی)",
+        title: "Project Coordinator & Documentation Specialist ",
         role: [
             "تنظیم اسناد پروژه",
             "هماهنگی تیم",
@@ -65,7 +65,7 @@ export const services = [
     },
     {
         name: "شیوا محققی",
-        title: "PR Development Consultant (مشاور توسعه روابط عمومی)",
+        title: "PR Development Consultant ",
         role: [
             "مشاوره در زمینه برندینگ",
             "ارتباط با مخاطبان",
@@ -74,7 +74,7 @@ export const services = [
     },
     {
         name: "داوود سپهریان",
-        title: "Data Analyst & Market Researcher (تحلیلگر داده و تحقیقات بازار)",
+        title: "Data Analyst & Market Researcher ",
         role: [
             "تحلیل داده‌های کاربران",
             "بررسی بازارهای هدف",

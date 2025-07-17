@@ -17,10 +17,10 @@ function WhyUs() {
                     </div>
                     <div className="w-3/6 h-fit relative ">
                         <ColumnBlue CusStyle={"h-full -z-3"} />
-                        <h2 className="z-1 w-full flex justify-center items-center p-3 text-lg font-bold">
+                        <h2 className="z-1 w-full flex justify-center items-center p-3 text-lg font-bold text-[#2D1F44]">
                             چرا بهلند...
                         </h2>
-                        <p className="z-1 w-full flex justify-center items-center text-justify p-2 text-sm">
+                        <p className="z-1 w-full flex justify-center items-center text-justify p-2 text-sm text-[#2D1F44]">
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
                             در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد

@@ -42,13 +42,13 @@ export default function Home() {
       )}
 
       {/* banner section */}
-      <div className="relative w-full h-fit">
+      {/* <div className="relative w-full h-fit">
         <Image
           src={Banner}
           alt="behland_banner"
           className="w-full h-full object-cover brightness-90"
         />
-      </div>
+      </div> */}
       <div className="my-4"></div>
 
       {/* text section */}
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="w-3/6">
             <Image src={charectors} alt="behnoods" />
           </div>
-          <div className="w-3/6 h-fit relative ">
+          <div className="w-3/6 h-fit relative text-[#2D1F44] ">
             <ColumnBlue CusStyle={"h-full -z-3"} />
             <h2 className="z-1 w-full flex justify-center items-center p-3 text-lg font-bold">
               ماجراجویی مالی تو اینجاست ...

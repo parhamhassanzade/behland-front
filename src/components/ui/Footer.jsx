@@ -14,17 +14,17 @@ function Footer() {
     // Responsive Header with mobile menu
 
     return (
-        <div className="text-white w-full border-t border-gray-700 ">
+        <div className="text-[#fff] w-full border-t border-gray-700 bg-[#143446]">
             <footer className="flex flex-col items-center  p-4">
 
-                <div className="hidden md:flex items-center justify-between w-full">
+                <div className="hidden md:flex items-center justify-between w-full text-[#fff]">
                     {/* Footer Nav */}
                     <nav className="block">
                         <ul className="flex space-x-4">
                             <li>
                                 <a
                                     href="#"
-                                    className="text-white hover:text-gray-400 focus:underline"
+                                    className=" hover:text-gray-400 focus:underline"
                                 >
                                     درباره ما
                                 </a>
@@ -32,7 +32,7 @@ function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-white hover:text-gray-400 focus:underline"
+                                    className=" hover:text-gray-400 focus:underline"
                                 >
                                     تماس با ما
                                 </a>
@@ -40,7 +40,7 @@ function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-white hover:text-gray-400 focus:underline"
+                                    className=" hover:text-gray-400 focus:underline"
                                 >
                                     حریم خصوصی
                                 </a>
@@ -48,7 +48,7 @@ function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-white hover:text-gray-400 focus:underline"
+                                    className=" hover:text-gray-400 focus:underline"
                                 >
                                     شرایط استفاده
                                 </a>
@@ -65,14 +65,14 @@ function Footer() {
                 </div>
                 {/* social media */}
                 <div>
-                    <div className="flex space-x-4 mt-4">
-                        <a href="#" className="text-white hover:text-gray-400">
+                    <div className="flex space-x-4 mt-4 text-[#fff]">
+                        <a href="#" className=" hover:text-gray-400">
                             <InstagramIcon />
                         </a>
-                        <a href="#" className="text-white hover:text-gray-400">
+                        <a href="#" className=" hover:text-gray-400">
                             <TelegramIcon />
                         </a>
-                        <a href="#" className="text-white hover:text-gray-400">
+                        <a href="#" className=" hover:text-gray-400">
                             <LinkedInIcon />
                         </a>
                     </div>
