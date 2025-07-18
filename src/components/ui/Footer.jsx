@@ -1,10 +1,6 @@
 "use client";
 import React from "react";
-import { Avatar } from "@/components/ui/avatar";
-import logo from "../../assets/Images/logo.png"; // Adjust the path as necessary
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MenuMobile } from "./MenuMobile";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -14,8 +10,8 @@ function Footer() {
     // Responsive Header with mobile menu
 
     return (
-        <div className="text-[#fff] w-full border-t border-gray-700 bg-[#143446]">
-            <footer className="flex flex-col items-center  p-4">
+        <footer className="w-full border-t border-gray-700 bg-[#143446] text-[#fff] mt-auto">
+            <div className="flex flex-col items-center  p-4">
 
                 <div className="hidden md:flex items-center justify-between w-full text-[#fff]">
                     {/* Footer Nav */}
@@ -84,8 +80,8 @@ function Footer() {
                     </div>
 
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
     );
 }
 

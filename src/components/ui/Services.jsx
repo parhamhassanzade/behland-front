@@ -20,7 +20,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="services" className="w-full min-h-screen py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+        <section id="services" className="w-full  py-24 px-6 sm:px-10 lg:px-20 flex flex-col items-center">
             <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
 
                 <h2 className="text-4xl  sm:text-5xl font-bold tracking-tight text-center leading-tight">
