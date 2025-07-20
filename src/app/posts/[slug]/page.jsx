@@ -31,7 +31,6 @@ export default async function PostPage({ params }) {
 
     if (!post) return <div>پست پیدا نشد</div>;
 
-
     const convertDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString("fa-IR", {
@@ -40,25 +39,27 @@ export default async function PostPage({ params }) {
             month: "long",
             day: "numeric",
         });
-
-
     };
 
     return (
-        <section>
-            <div className="p-4 ">
+        <section className="grid grid-cols-3 mt-4 gap-5 p-4">
+            <div className="col-span-2">
                 <div className="bg-white text-black p-6 rounded-lg shadow-md flex justify-between items-center">
                     <h1 className="text-xl font-bold mb-2">{post.title}</h1>
                     <p>{convertDate(post.createdAt)}</p>
                 </div>
-                <div className="mt-4 p-4  rounded-lg h-screen overflow-y-auto w-full flex flex-col items-center">
-                    <div className="mt-4 p-5 bg-white rounded-lg  overflow-y-auto w-4/6 flex flex-col ">
 
-                        <p className="font-bold text-2xl text-start align-baseline">{post.content}</p>
+                <div className=" rounded-lg h-fit  w-fit flex flex-col items-right">
+                    <div className="mt-4 p-5 bg-white rounded-lg  overflow-y-auto w-fit flex flex-col ">
+                        <p className=" text-lg  align-baseline text-justify">
+                            {post.content}
+                        </p>
                     </div>
                 </div>
             </div>
-            <NewsBar />
+            <div className="cols-span-1">
+                <NewsBar newsLimit={6} mobile={true} />
+            </div>
         </section>
     );
 }
