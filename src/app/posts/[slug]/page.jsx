@@ -49,11 +49,12 @@ export default async function PostPage({ params }) {
                     <p>{convertDate(post.createdAt)}</p>
                 </div>
 
-                <div className=" rounded-lg h-fit  w-fit flex flex-col items-right">
-                    <div className="mt-4 p-5 bg-white rounded-lg  overflow-y-auto w-fit flex flex-col ">
-                        <p className=" text-lg  align-baseline text-justify">
-                            {post.content}
-                        </p>
+                <div className=" rounded-lg h-fit  w-full flex flex-col items-right">
+                    <div className="mt-4 p-5 bg-white rounded-lg overflow-y-auto w-full flex flex-col ">
+                        <div
+                            className="text-lg align-baseline text-justify"
+                            dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
                     </div>
                 </div>
             </div>
