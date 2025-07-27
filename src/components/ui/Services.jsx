@@ -27,8 +27,7 @@ export default function Services() {
                     خدمات ما
                 </h2>
                 <p className="text-xl  sm:text-xl font-base tracking-tight text-center leading-tight font-bold">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                    ارائه دوره‌های آنلاین متنوع و تخصصی برای توسعه مهارت‌های فردی و حرفه‌ای                </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">

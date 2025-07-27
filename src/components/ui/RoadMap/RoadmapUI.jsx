@@ -23,49 +23,45 @@ export default function RoadmapUI() {
         <h2 className="text-4xl text-[#2D1F44] sm:text-5xl font-bold tracking-tight text-center leading-tight">
           نقشه راه پروژه
         </h2>
-        <p className="text-xl  sm:text-xl font-base tracking-tight text-center leading-tight">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <p className="text-xl  sm:text-xl font-base tracking-tight text-center leading-tight font-bold">
+          مروری بر مراحل کلیدی اهداف و برنامه‌ریزی پروژه‌ آموزشی ما{" "}
         </p>
       </div>
       <Tabs value={activeTab} className="w-full text-[#2D1F44] ">
         <TabsList className="cursor-pointer gap-3 w-full flex  justify-center items-center px-5 mb-5">
           <div className="flex items-center gap-2 overflow-x-auto">
             <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="phase1"
               onClick={() => handleTabChange("phase1")}
             >
               فاز ۱<span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="Phase2"
               onClick={() => handleTabChange("Phase2")}
             >
-              فاز ۲
-              <span>اغاز داستان بهلند</span>
+              فاز ۲<span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="Phase2"
             >
-              فاز ۳
-              <span>اغاز داستان بهلند</span>
+              فاز ۳<span>اغاز داستان بهلند</span>
             </TabsTrigger>
             <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="Phase2"
             >
-              فاز ۴
-              <span>اغاز داستان بهلند</span>
+              فاز ۴<span>اغاز داستان بهلند</span>
             </TabsTrigger>
 
             <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="Phase2"
             >
-              فاز ۵
-              <span>اغاز داستان بهلند</span>
+              فاز ۵<span>اغاز داستان بهلند</span>
             </TabsTrigger>
           </div>
         </TabsList>

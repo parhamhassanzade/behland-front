@@ -14,7 +14,7 @@ async function getPosts() {
     return res.json();
 }
 
-function NewsBar({ newsLimit = 5, mobile = false }) {
+function NewsBar({ newsLimit = 5, mobile = false, title }) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -24,7 +24,6 @@ function NewsBar({ newsLimit = 5, mobile = false }) {
         }
         fetchPosts();
     }, []);
-
 
     const limitedPosts = posts.slice(0, newsLimit);
 
@@ -41,10 +40,11 @@ function NewsBar({ newsLimit = 5, mobile = false }) {
         <div className=" h-fit mb-5 mx-auto overflow-hidden">
             <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
                 <h2 className=" md:text-4xl text-[#2D1F44] text-2xl font-bold tracking-tight text-center leading-tight">
-                    اخبار و مقالات
+                    {title || " اخبار و مقالات"}
                 </h2>
                 <p className="hidden md:block text-xl sm:text-xl font-base tracking-tight text-center leading-tight">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    جدیدترین اخبار و مطالب تخصصی حوزه آموزش آنلاین بهلند را با ما دنبال
+                    کنید{" "}
                 </p>
             </div>
             {/* دسکتاپ و تبلت: اسلایدر */}

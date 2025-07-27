@@ -59,7 +59,7 @@ export default async function PostPage({ params }) {
                 </div>
             </div>
             <div className="cols-span-1">
-                <NewsBar newsLimit={6} mobile={true} />
+                <NewsBar newsLimit={6} mobile={true} title={"اخرین مقالات "} />
             </div>
         </section>
     );
