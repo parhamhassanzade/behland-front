@@ -7,6 +7,7 @@ import Davood from "../assets/Images/TeamMemebers/David.png";
 import Parham from "../assets/Images/TeamMemebers/parham.png";
 import Unknown from "../assets/Images/TeamMemebers/Unknown.png";
 import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
+import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 
 export const services = [
     {
@@ -81,5 +82,15 @@ export const services = [
             "تدوین استراتژی‌های ورود به بازار",
         ],
         image: Davood,
+    },
+    {
+        name: " یاسمن طاهری",
+        title: "Graphic Designer ",
+        role: [
+            "تحلیل داده‌های کاربران",
+            "بررسی بازارهای هدف",
+            "تدوین استراتژی‌های ورود به بازار",
+        ],
+        image: Yassaman,
     },
 ];
