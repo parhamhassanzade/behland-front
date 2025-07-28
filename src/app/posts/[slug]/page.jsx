@@ -1,5 +1,6 @@
-import NewsBar from "@/components/ui/News/NewsBar";
 
+import dynamic from "next/dynamic";
+const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
 async function getPost(slug) {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/posts`,
