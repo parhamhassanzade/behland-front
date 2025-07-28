@@ -1,18 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+"use client";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 
 
 
-export const metadata = {
-  title: "Behland",
-  description: "Behland-teaching platform",
-};
+// export const metadata = {
+//   title: "Behland",
+//   description: "Behland-teaching platform",
+// };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body className="bg-[#F3F6EB] text=black scroll-smooth flex flex-col min-h-screen">
         <Header />
         {children}

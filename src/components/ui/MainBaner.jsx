@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import cow from "../../assets/Images/Cow.png";
 import Image from "next/image";

@@ -1,36 +1,22 @@
 "use client";
-import dynamic from "next/dynamic";
-const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
-async function getPost(slug) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/posts`,
-        {
-            cache: "no-store",
+
+import { useEffect, useState } from "react";
+import NewsBarClient from "./NewsBarClient";
+
+export default function PostPage({ params }) {
+    const [post, setPost] = useState(null);
+
+    useEffect(() => {
+        async function fetchPost() {
+            const res = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/posts`,
+                { cache: "no-store" }
+            );
+            const posts = await res.json();
+            setPost(posts.find((p) => p.slug === params.slug));
         }
-    );
-    const posts = await res.json();
-    return posts.find((p) => p.slug === slug);
-}
-
-export async function generateMetadata({ params }) {
-    const post = await getPost(params.slug);
-    console.log("Post metadata:", post);
-
-    if (!post) {
-        return { title: "پست پیدا نشد" };
-    }
-
-    return {
-        title: post.title,
-        description: post.content,
-        createAt: post.createdAt,
-    };
-}
-
-export default async function PostPage({ params }) {
-    const post = await getPost(params.slug);
-
-    if (!post) return <div>پست پیدا نشد</div>;
+        fetchPost();
+    }, [params.slug]);
 
     const convertDate = (dateString) => {
         const date = new Date(dateString);
@@ -42,6 +28,8 @@ export default async function PostPage({ params }) {
         });
     };
 
+    if (!post) return <div>در حال بارگذاری...</div>;
+
     return (
         <section className="grid grid-cols-3 mt-4 gap-5 p-4">
             <div className="col-span-2">
@@ -49,8 +37,7 @@ export default async function PostPage({ params }) {
                     <h1 className="text-xl font-bold mb-2">{post.title}</h1>
                     <p>{convertDate(post.createdAt)}</p>
                 </div>
-
-                <div className=" rounded-lg h-fit  w-full flex flex-col items-right">
+                <div className="rounded-lg h-fit w-full flex flex-col items-right">
                     <div className="mt-4 p-5 bg-white rounded-lg overflow-y-auto w-full flex flex-col ">
                         <div
                             className="text-lg align-baseline text-justify"
@@ -60,7 +47,7 @@ export default async function PostPage({ params }) {
                 </div>
             </div>
             <div className="cols-span-1">
-                <NewsBar newsLimit={6} mobile={true} title={"اخرین مقالات "} />
+                <NewsBarClient newsLimit={6} mobile={true} title={"اخرین مقالات "} />
             </div>
         </section>
     );
