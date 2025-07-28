@@ -37,13 +37,13 @@ function WhyUs() {
                 {/* لایه نور (نور سمت چپ) */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2/12 h-1/12 bg-white/40 rounded blur-[120px] opacity-80" />
 
-                <div className=" text-white w-full mt-6 ">
+                <div className=" text-[#2D1F44]  w-full mt-6 ">
                     <div className="w-full h-fit relative ">
                         <ColumnBlue CusStyle={"h-full -z-3"} />
                         <h3 className="z-1 w-full flex justify-center items-center p-3 text-base font-bold">
                             چرا بهلند....
                         </h3>
-                        <p className="z-1 w-full flex justify-center items-center text-justify p-2 text-sm">
+                        <p className="z-1 w-full flex justify-center items-center text-justify p-2 text-base">
                             چون بهلند مسیری برات آماده کرده که بازارهای مالی رو با بهترین روش ممکن آموزش ببینی.
                             مسیری که مثل یک بازی با ماموریت ها و تمرین هاش از یاد گرفتن حوصله ات سرنمیره.
                             مسیری که مرحله به مرحله مهارت تو رو برای بازارهای مالی بیشتر می کنه.
