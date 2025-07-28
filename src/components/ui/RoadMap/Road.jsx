@@ -4,7 +4,7 @@ function Road() {
     return (
         <>
             <svg
-                viewBox="0 0 1700 200"
+                viewBox="0 0 1600 200"
                 className="absolute top-0 left-0 w-full h-full z-0"
             >
                 {/* Upper curved line - more distance from center */}

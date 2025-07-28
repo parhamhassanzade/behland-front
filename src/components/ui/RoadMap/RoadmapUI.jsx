@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Phase1 from "./Phase1";
 import Phase2 from "./Phase2";
+import Phase3 from "./Phase3";
 
 export default function RoadmapUI() {
   const [activeTab, setActiveTab] = useState("phase1");
@@ -35,33 +36,34 @@ export default function RoadmapUI() {
               value="phase1"
               onClick={() => handleTabChange("phase1")}
             >
-              فاز ۱<span>اغاز داستان بهلند</span>
+              فاز ۱<span> اماده سازی توسعه اولیه</span>
             </TabsTrigger>
             <TabsTrigger
               className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
               value="Phase2"
               onClick={() => handleTabChange("Phase2")}
             >
-              فاز ۲<span>اغاز داستان بهلند</span>
+              فاز ۲<span>فروش مرحله‌ای و تقویت زیرساخت</span>
             </TabsTrigger>
             <TabsTrigger
               className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase2"
+              value="Phase3"
+              onClick={() => handleTabChange("Phase3")}
             >
-              فاز ۳<span>اغاز داستان بهلند</span>
+              فاز ۳<span>تکمیل زیرساخت، آموزش پیشرفته و NFT</span>
             </TabsTrigger>
             <TabsTrigger
               className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase2"
+              value="Phase3"
             >
-              فاز ۴<span>اغاز داستان بهلند</span>
+              فاز ۴<span>گسترش بازار و آغاز فروش عمومی</span>
             </TabsTrigger>
 
             <TabsTrigger
               className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase2"
+              value="Phase3"
             >
-              فاز ۵<span>اغاز داستان بهلند</span>
+              فاز ۵<span>تثبیت اقتصادی و رشد پایدار</span>
             </TabsTrigger>
           </div>
         </TabsList>
@@ -79,6 +81,14 @@ export default function RoadmapUI() {
               }`}
           >
             <Phase2 />
+          </div>
+        </TabsContent>
+        <TabsContent value="Phase3">
+          <div
+            className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            <Phase3 />
           </div>
         </TabsContent>
       </Tabs>
