@@ -9,7 +9,7 @@ import RoadmapUI from "@/components/ui/RoadMap/RoadmapUI";
 import WhyUs from "@/components/ui/WhyUs";
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { useEffect, useState } from "react";
-import NewsBar from "@/components/ui/News/NewsBar";
+const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
 import MainBaner from "@/components/ui/MainBaner";
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
