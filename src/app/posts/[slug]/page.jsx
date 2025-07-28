@@ -1,4 +1,4 @@
-
+"use client";
 import dynamic from "next/dynamic";
 const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
 async function getPost(slug) {
