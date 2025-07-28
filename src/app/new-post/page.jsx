@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useState } from "react";
 
 import ReactEditor from "react-text-editor-kit";
