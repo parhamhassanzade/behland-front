@@ -1,34 +1,58 @@
 "use client";
 import React from "react";
-import cow from "../../assets/Images/Cow.png";
+import BannerImg from "../../assets/Images/BannerImg.png";
 import Image from "next/image";
+import coin from "../../assets/Images/coin.png";
+const labels = ["روز", "ساعت", "دقیقه", "ثانیه"];
 function MainBaner() {
     return (
-        <section className="w-full h-fit flex justify-center items-center mt-8">
-            <div className="relative w-full max-w-6xl h-fit flex flex-col justify-center items-center">
-                <div className="absolute left-0 z-10">
-                    <Image
-                        src={cow}
-                        alt="behland_banner"
-                        className="object-cover"
-                        width={200}
-                        height={200}
-                        // سایز تصویر را با کلاس‌های ریسپانسیو کنترل کن
-                        style={{ width: "auto", height: "auto" }}
-                    />
+        <section className="w-full  bg-[#F3F6EB] relative">
+
+            <div className="w-full  grid grid-cols-2 bg-[#F3F6EB]">
+                <div className="w-full flex flex-col justify-center items-center">
+                    <div className=" flex flex-col items-center justify-center  w-5/6">
+                        <div className=" flex items-center justify-center">
+                            <p className="text-[#4D4D4D]  text-[8em] font-bold drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.15)]  m-0 p-0">
+                                به‌لـــــند
+                            </p>
+                            <Image src={coin} alt="coin" />
+                        </div>
+                        <span className="text-[#4D4D4D] text-base font-normal">
+                            به‌لند جاییه برای یادگیری، رشد و درآمد از مسیر بازی‌محور آموزش
+                            مالی. هر مرحله تو رو یک قدم به تحلیلگر شدن و استقلال مالی نزدیک‌تر
+                            می‌کنه.
+                        </span>
+                        <div className="w-full flex flex-col justify-start items-center mt-10">
+                            <p className="text-[#000000] text-xl font-bold  w-full">
+                                منتظرمون باشید
+                            </p>
+                            <div className="flex gap-4 p-4 items-center justify-center">
+                                {["۰۴", "۲۴", "۳۴", "۱۰"].map((num, idx, arr) => (
+                                    <React.Fragment key={idx}>
+                                        <div className="flex flex-col items-center">
+                                            <div className="p-[1px] rounded-lg bg-gradient-to-b from-purple-600 to-gray-400">
+                                                <div className="w-16 h-16 rounded-lg bg-white flex items-center justify-center text-purple-700 text-xl font-bold">
+                                                    {num}
+                                                </div>
+                                            </div>
+                                            <span className="mt-2 text-xs text-[#4D4D4D] font-semibold">
+                                                {labels[idx]}
+                                            </span>
+                                        </div>
+                                        {idx < arr.length - 1 && (
+                                            <span className="text-3xl font-bold text-[#4D4D4D] mx-1">
+                                                :
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span className="font-black text-white text-4xl sm:text-6xl md:text-8xl lg:text-[10em] flex flex-row">
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(255,0,0,0.7)]">D</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.7)]">N</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.7)]">A</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(59,130,246,0.7)]">L</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.7)]">H</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.7)]">E</span>
-                    <span className="mx-1 sm:mx-2 drop-shadow-[-5px_5px_0px_rgba(249,115,22,0.7)]">B</span>
-                </span>
-                <p className="text-black text-xs sm:text-base md:text-lg mt-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </p>
+                <div className="flex justify-center items-center">
+                    <Image src={BannerImg} alt="banner" />
+                </div>
             </div>
         </section>
     );

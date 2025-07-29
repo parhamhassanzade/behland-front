@@ -11,7 +11,7 @@ import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
 
 export const services = [
     {
-        name: "امیرعلی نیرومند",
+        name: "امیرعلی نیرومند زال پور",
         title: "Founder & CEO",
         role: [
             "مسئول نظارت کلی",
@@ -46,7 +46,7 @@ export const services = [
         image: Amirhossein,
     },
     {
-        name: "علیرضا نیرومند",
+        name: "علیرضا نیرومند زال پور",
         title: "Educational Content Lead ",
         role: [
             "طراحی دوره‌های آموزشی",
@@ -56,7 +56,7 @@ export const services = [
     },
     {
         name: "نسرین قادری",
-        title: "Project Coordinator & Documentation Specialist ",
+        title: "SEO & Documentation Specialist ",
         role: [
             "تنظیم اسناد پروژه",
             "هماهنگی تیم",
@@ -84,8 +84,8 @@ export const services = [
         image: Davood,
     },
     {
-        name: " یاسمن طاهری",
-        title: "Graphic Designer ",
+        name: " یاسمین طاهری",
+        title: "Senior Visual Designer ",
         role: [
             "تحلیل داده‌های کاربران",
             "بررسی بازارهای هدف",

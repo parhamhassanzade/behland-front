@@ -8,7 +8,7 @@ function Team() {
     return (
         <section
             id="team"
-            className="w-full  px-3 sm:px-10 lg:px-20 flex flex-col items-center "
+            className="w-full pt-24  px-3 sm:px-10 lg:px-20 flex flex-col items-center "
         >
             <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
                 <h2 className="text-4xl  sm:text-5xl font-bold tracking-tight text-center leading-tight">
@@ -19,8 +19,8 @@ function Team() {
                 </p>
             </div>
 
-            <div className="w-full h-fit  overflow-x-auto">
-                <div className="flex justify-center gap-10 min-w-max px-2 p-14  ">
+            <div className="w-full h-4/6  overflow-x-auto bg-[#F3F6EB] rounded-3xl p-4">
+                <div className="flex w-full   justify-center gap-10 min-w-max px-2 p-2   ">
                     {services.map((item, i) => (
                         <div
                             key={i}
