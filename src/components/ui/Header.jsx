@@ -11,9 +11,9 @@ function Header() {
     return (
         <div className="text-white w-full bg-[#F3F6EB] border-b border-gray-200">
             <header className="flex items-center  p-4">
-                <Avatar className="mx-2">
-                    <Image src={logo} alt="Logo" />
-                </Avatar>
+                {/* <Avatar className="mx-2"> */}
+                <Image src={logo} alt="Logo" className="w-14 h-14" />
+                {/* </Avatar> */}
                 <div className="flex items-center justify-between w-full">
                     {/* Hamburger for mobile */}
                     {/* <button
