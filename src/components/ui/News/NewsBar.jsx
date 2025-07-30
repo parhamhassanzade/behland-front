@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
-
+import wire from "@/assets/Images/wire.png";
+import { Badge } from "@/components/ui/badge"
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+// Assuming you have a wire image for background
 async function getPosts() {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/posts`,
@@ -37,7 +41,7 @@ function NewsBar({ newsLimit = 5, mobile = false, title }) {
     const [emblaRef] = useEmblaCarousel(options, [Autoplay()]);
 
     return (
-        <div className=" h-fit mb-5 mx-auto overflow-hidden">
+        <div style={{ backgroundImage: `url(${wire.src})` }} className=" h-fit mt-24 bg-[#F3F6EB] p-24 mx-auto overflow-hidden">
             <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
                 <h2 className=" md:text-4xl text-[#2D1F44] text-2xl font-bold tracking-tight text-center leading-tight">
                     {title || " اخبار و مقالات"}
@@ -47,19 +51,55 @@ function NewsBar({ newsLimit = 5, mobile = false, title }) {
                     کنید{" "}
                 </p>
             </div>
-            {/* دسکتاپ و تبلت: اسلایدر */}
+
             {!mobile && (
                 <div className="block">
                     <div className="embla__viewport" ref={emblaRef}>
-                        <div className="embla__container flex">
+                        <div className="embla__container flex gap-5">
                             {limitedPosts.map((item, idx) => (
                                 <Link
                                     href={`/posts/${item.slug}`}
                                     passHref
                                     key={idx}
-                                    className="embla__slide flex-shrink-0 w-[30%] mx-2 bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] rounded-xl p-6 text-[#2D1F44] shadow-lg transition-transform duration-300 text-center align-middle"
+                                    className="embla__slide text-black drop-shadow-xl h-32 w-100 rounded-lg bg-white p-3"
                                 >
-                                    <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                                    <header className="flex items-center p-2 gap-4">
+                                        <Badge className={`h-4 w-4 ${true ? "bg-green-500" : "bg-gray-500"} rounded-full  font-mono tabular-nums`}
+                                            variant="destructive"></Badge>
+                                        <p className="font-bold text-lg ">{item.title}</p>
+                                    </header>
+                                    <span
+                                        className=""
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                item.content
+                                                    .replace(/<[^>]+>/g, " ") // Remove HTML tags
+                                                    .split(/\s+/) // Split into words
+                                                    .slice(0, 50) // Take first 50 words
+                                                    .join(" ") + (item.content.split(/\s+/).length > 50 ? "..." : "")
+                                        }}
+                                    />
+                                    <hr className="mt-2" />
+                                    <div className="flex items-center justify-between p-2">
+                                        <div className="flex items-center gap-3">
+                                            <CalendarMonthIcon sx={{ size: "24px" }} />
+                                            <p className="text-sm ">
+                                                {item.createdAt
+                                                    ? new Date(item.createdAt).toLocaleDateString("fa-IR", {
+                                                        year: "numeric",
+                                                        month: "long",
+                                                        day: "numeric",
+                                                        weekday: "long",
+                                                    })
+                                                    : "تاریخ نامشخص"}
+                                            </p>
+
+                                        </div>
+                                        <p className="text-sm text-[#79C699]">
+                                            مشاهده بیشتر
+                                            <NavigateBeforeIcon />
+                                        </p>
+                                    </div>
                                 </Link>
                             ))}
                         </div>
