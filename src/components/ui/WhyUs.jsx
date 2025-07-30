@@ -3,20 +3,18 @@ import React from 'react'
 import Why from "../../assets/Images/Whyus.png";
 import Image from 'next/image';
 import ColumnBlue from './ColumnBlue';
+import wire from "../../assets/Images/wire.png";
 
 function WhyUs() {
     return (
-        <section id="whyus">
+        <section id="whyus" style={{ backgroundImage: `url(${wire.src})` }}>
             {/* text section */}
             <div className=" w-full h-fit overflow-hidden p-2 md:p-16 hidden md:block">
                 {/* لایه نور (نور سمت چپ) */}
 
                 <div className="flex justify-between items-center text-white w-full mt-6 ">
-                    <div className="w-3/6">
-                        <Image src={Why} alt="why" />
-                    </div>
-                    <div className="w-3/6 h-fit relative ">
-                        <ColumnBlue CusStyle={"h-full -z-3"} />
+                    <div className="w-4/8 h-fit relative text-[#2D1F44] bg-[#F3F6EB] p-4 rounded-2xl">
+
                         <h2 className="z-1 w-full flex justify-center items-center p-3 text-lg font-bold text-[#2D1F44]">
                             چرا بهلند...
                         </h2>
@@ -30,6 +28,10 @@ function WhyUs() {
 
                         </p>
                     </div>
+                    <div className="w-3/6">
+                        <Image src={Why} alt="why" />
+                    </div>
+
                 </div>
             </div>
 
