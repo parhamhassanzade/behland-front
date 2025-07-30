@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="w-full min-h-screen text-white relative">
       {/* Scroll to top button */}
-      {showScroll && (
+      {/* {showScroll && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           style={{
@@ -37,7 +37,7 @@ export default function Home() {
         >
           <ArrowCircleUpIcon sx={{ color: "green", fontSize: 48 }} />
         </button>
-      )}
+      )} */}
 
       {/* banner section */}
       <MainBaner />

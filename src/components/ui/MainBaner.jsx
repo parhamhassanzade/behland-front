@@ -3,12 +3,13 @@ import React from "react";
 import BannerImg from "../../assets/Images/BannerImg.png";
 import Image from "next/image";
 import coin from "../../assets/Images/coin.png";
+import bannerBg from "../../assets/Images/bannerBg.png";
 const labels = ["روز", "ساعت", "دقیقه", "ثانیه"];
 function MainBaner() {
     return (
-        <section className="w-full  bg-[#F3F6EB] relative">
+        <section style={{ backgroundImage: `url(${bannerBg.src})` }} className="w-full    relative">
 
-            <div className="w-full  grid grid-cols-2 bg-[#F3F6EB]">
+            <div className="w-full  grid grid-cols-2 ">
                 <div className="w-full flex flex-col justify-center items-center">
                     <div className=" flex flex-col items-center justify-center  w-5/6">
                         <div className=" flex items-center justify-center">
