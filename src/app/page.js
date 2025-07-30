@@ -1,15 +1,10 @@
 "use client";
-import Image from "next/image";
-import charectors from "../../src/assets/Images/character.png";
-import ColumnBlue from "@/components/ui/ColumnBlue";
 import Services from "@/components/ui/Services";
 import Team from "@/components/ui/Team";
 import RoadmapUI from "@/components/ui/RoadMap/RoadmapUI";
 import WhyUs from "@/components/ui/WhyUs";
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
-// const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
 import MainBaner from "@/components/ui/MainBaner";
 import NewsBarClient from "./posts/[slug]/NewsBarClient";
 import Explain from "@/components/ui/Explain";
