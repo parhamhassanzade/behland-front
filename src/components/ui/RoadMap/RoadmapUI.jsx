@@ -37,13 +37,13 @@ export default function RoadmapUI() {
               onClick={() => handleTabChange(phase.number)}
               key={index}
               className={`cursor-pointer !flex flex-row !items-center !justify-start mx-4 p-4 py-8 ${activeTab === phase.number
-                  ? "bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
-                  : "bg-white text-[#4D4D4D]"
+                ? "bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+                : "bg-white text-[#4D4D4D]"
                 }`}
             >
               <div className={`w-6 h-6 p-5 rounded-full flex items-center justify-center text-white text-sm font-bold ${activeTab === phase.number
-                  ? "border-2"
-                  : "bg-[#4D4D4D]/30 text-[#4D4D4D]"
+                ? "border-2"
+                : "bg-[#4D4D4D]/30 text-[#4D4D4D]"
                 } font-bold`}>
                 {phase.number}
               </div>
@@ -56,7 +56,7 @@ export default function RoadmapUI() {
             <div key={i} className="flex items-center justify-start w-full gap-2">
               <Badge className={`h-10 w-10 ${task?.status ? "bg-green-500" : "bg-gray-500"} rounded-full px-1 font-mono tabular-nums`}
                 variant="destructive"></Badge>
-              <Card className="border-green-400 bg-[#75C6961A] w-full text-[#4D4D4D] text-base">
+              <Card className={` ${task?.status ? "bg-[#75C696]/20 border-green-400" : "bg-[#E0E0E04A] border-gray-600"} w-full text-[#4D4D4D] text-base`}>
                 <CardContent className="p-4 text-right font-medium">{task.desc}</CardContent>
               </Card>
             </div>
