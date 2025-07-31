@@ -1,97 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Phase1 from "./Phase1";
 import Phase2 from "./Phase2";
 import Phase3 from "./Phase3";
-
+import { Card, CardContent } from "@/components/ui/card"
+import { phases } from "@/util/Data";
+import { Badge } from "@/components/ui/badge"
 export default function RoadmapUI() {
-  const [activeTab, setActiveTab] = useState("phase1");
-  const [fade, setFade] = useState(true);
+  const [activeTab, setActiveTab] = useState(1);
+  // const [fade, setFade] = useState(true);
 
   const handleTabChange = (value) => {
-    setFade(false);
+
     setTimeout(() => {
       setActiveTab(value);
-      setFade(true);
+
     }, 250); // duration of fade out
   };
 
   return (
-    <section id="roadmap">
+    <section id="roadmap" className="pt-24">
       <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
-        <h2 className="text-4xl text-[#2D1F44] sm:text-5xl font-bold tracking-tight text-center leading-tight">
+        <h2 className="text-3xl text-[#2D1F44] sm:text-5xl font-bold tracking-tight text-center leading-tight">
           نقشه راه پروژه
         </h2>
         <p className="text-xl  sm:text-xl font-base tracking-tight text-center leading-tight font-bold">
           مروری بر مراحل کلیدی اهداف و برنامه‌ریزی پروژه‌ آموزشی ما{" "}
         </p>
       </div>
-      <Tabs value={activeTab} className="w-full text-[#2D1F44] ">
-        <TabsList className="cursor-pointer gap-3 w-full flex  justify-center items-center px-5 mb-5">
-          <div className="flex items-center gap-2 overflow-x-auto">
-            <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="phase1"
-              onClick={() => handleTabChange("phase1")}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <div className="space-y-4">
+          {phases.map((phase, index) => (
+            <Card
+              onClick={() => handleTabChange(phase.number)}
+              key={index}
+              className={`cursor-pointer !flex flex-row !items-center !justify-start mx-4 p-4 md:py-8 py-4  ${activeTab === phase.number
+                ? "bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)]"
+                : "bg-white text-[#4D4D4D]"
+                }`}
             >
-              فاز ۱<span> اماده سازی توسعه اولیه</span>
-            </TabsTrigger>
-            <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase2"
-              onClick={() => handleTabChange("Phase2")}
-            >
-              فاز ۲<span>فروش مرحله‌ای و تقویت زیرساخت</span>
-            </TabsTrigger>
-            <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase3"
-              onClick={() => handleTabChange("Phase3")}
-            >
-              فاز ۳<span>تکمیل زیرساخت، آموزش پیشرفته و NFT</span>
-            </TabsTrigger>
-            <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase3"
-            >
-              فاز ۴<span>گسترش بازار و آغاز فروش عمومی</span>
-            </TabsTrigger>
+              <div className={`w-6 h-6 p-5 rounded-full flex items-center justify-center text-white text-sm font-bold ${activeTab === phase.number
+                ? "border-2"
+                : "bg-[#4D4D4D]/30 text-[#4D4D4D]"
+                } font-bold`}>
+                {phase.number}
+              </div>
+              <span className="text-right font-semibold">{phase.title}</span>
+            </Card>
+          ))}
+        </div>
+        <div className="space-y-4">
+          {phases[activeTab - 1]?.tasks?.map((task, i) => (
+            <div key={i} className="flex items-center justify-start w-full gap-2">
+              <Badge className={`md:h-8 md:w-8 h-5 w-5 ${task?.status ? "bg-green-500" : "bg-gray-500"} rounded-full px-1 font-mono tabular-nums`}
+                variant="destructive"></Badge>
+              <Card className={` ${task?.status ? "bg-[#75C696]/20 border-green-400" : "bg-[#E0E0E04A] border-gray-600"} w-full text-[#4D4D4D] text-base`}>
+                <CardContent className="md:p-4 p-1 text-right font-medium">{task.desc}</CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
 
-            <TabsTrigger
-              className="cursor-pointer border font-bold rounded-xl p-2 border-[#7ac576]/30 focus:text-blue-400 flex flex-col items-center bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] px-5"
-              value="Phase3"
-            >
-              فاز ۵<span>تثبیت اقتصادی و رشد پایدار</span>
-            </TabsTrigger>
-          </div>
-        </TabsList>
-        <TabsContent value="phase1">
-          <div
-            className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <Phase1 />
-          </div>
-        </TabsContent>
-        <TabsContent value="Phase2">
-          <div
-            className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <Phase2 />
-          </div>
-        </TabsContent>
-        <TabsContent value="Phase3">
-          <div
-            className={`transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <Phase3 />
-          </div>
-        </TabsContent>
-      </Tabs>
-    </section>
+
+      </div>
+    </section >
   );
 }

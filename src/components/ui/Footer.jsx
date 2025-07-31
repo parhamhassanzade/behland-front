@@ -6,79 +6,67 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Input } from "@/components/ui/input"
+import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 function Footer() {
     // Responsive Header with mobile menu
 
     return (
-        <footer className="w-full border-t border-gray-700 bg-[#143446] text-[#fff] mt-auto">
-            <div className="flex flex-col items-center  p-4">
-
-                <div className="hidden md:flex items-center justify-between w-full text-[#fff]">
-                    {/* Footer Nav */}
-                    <nav className="block">
-                        <ul className="flex space-x-4">
+        <footer className="w-full  text-[#fff] mt-10 p-5 relative">
+            {/* Arrow icon centered above the footer, 60% outside */}
+            <div
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="cursor-pointer absolute left-1/2 -translate-x-1/2 border-5 rounded-full border-white bg-[#143347]"
+                style={{
+                    top: '-10%',
+                    zIndex: 10,
+                }}
+            >
+                <ArrowUpwardTwoToneIcon sx={{ fontSize: 45, color: "#fff" }} />
+            </div>
+            <div className="bg-[#143446] grid md:grid-cols-2 grid-cols-1 p-5 md:p-0 rounded-lg">
+                <div className="flex items-center justify-center">
+                    <nav className="text-[#fff]">
+                        <ul className="flex items-center justify-center space-x-4 md:text-base text-sm">
                             <li>
-                                <a
-                                    href="#"
-                                    className=" hover:text-gray-400 focus:underline"
-                                >
+                                <a href="#team" className="hover:text-gray-400 focus:underline">
                                     درباره ما
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    className=" hover:text-gray-400 focus:underline"
+                                    href="#roadmap"
+                                    className="hover:text-gray-400 focus:underline"
                                 >
                                     تماس با ما
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className=" hover:text-gray-400 focus:underline"
-                                >
+                                <a href="#whyus" className="hover:text-gray-400 focus:underline">
                                     حریم خصوصی
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className=" hover:text-gray-400 focus:underline"
-                                >
+                                <a href="#whyus" className="hover:text-gray-400 focus:underline">
                                     شرایط استفاده
                                 </a>
                             </li>
                         </ul>
                     </nav>
-                    {/* Footer Buttons */}
-                    <div className="flex items-center space-x-1.5">
-                        <Button className="bg-[#1e262c] rounded-2xl"><SupportAgentIcon /></Button>
-                        <Button className="bg-[#1e262c] font-base rounded-2xl">
-                            اشتراک در خبرنامه
+                </div>
+                <div className=" flex flex-col md:flex-row md:flex items-center justify-center gap-5 p-4 w-full md:mt-0 mt-3">
+                    <div className="flex items-center md:w-4/6 w-full rounded-2xl overflow-hidden bg-[#FFFFFF26]/30">
+                        <Input type="email" placeholder="ایمیل خود را وارد کنید" className="rounded-full border-0" />
+                        <Button className="text-black rounded-full bg-[#75C696]">
+                            عضویت
                         </Button>
                     </div>
-                </div>
-                {/* social media */}
-                <div>
-                    <div className="flex space-x-4 mt-4 text-[#fff]">
-                        <a href="#" className=" hover:text-gray-400">
-                            <InstagramIcon />
-                        </a>
-                        <a href="#" className=" hover:text-gray-400">
-                            <TelegramIcon />
-                        </a>
-                        <a href="#" className=" hover:text-gray-400">
-                            <LinkedInIcon />
-                        </a>
-                    </div>
+                    <div className="flex items-center justify-center gap-4 text-[#fff]">
 
-                </div>
-                <div>
-                    <div className="flex space-x-4 mt-4">
-                        <p>Made with <FavoriteBorderIcon sx={{ color: "red" }} /> in Iran  </p>
+                        <TelegramIcon />
+                        <LinkedInIcon />
+                        <InstagramIcon />
                     </div>
-
                 </div>
             </div>
         </footer>

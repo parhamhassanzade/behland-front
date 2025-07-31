@@ -1,21 +1,23 @@
 "use client";
 import { useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
+import wire from "@/assets/Images/wire.png";
+import { Badge } from "@/components/ui/badge";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 async function getPosts() {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/posts`,
-        {
-            cache: "no-store",
-        }
+        { cache: "no-store" }
     );
     return res.json();
 }
 
-function NewsBar({ newsLimit = 5, mobile = false, title }) {
+function NewsBar({ newsLimit = 9, mobile = false, title }) {
     const [posts, setPosts] = useState([]);
+    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
         async function fetchPosts() {
@@ -27,58 +29,115 @@ function NewsBar({ newsLimit = 5, mobile = false, title }) {
 
     const limitedPosts = posts.slice(0, newsLimit);
 
-    const options = {
-        loop: true,
-        speed: 10,
-        align: "center",
-        slidesToScroll: 1,
-        dragFree: true,
+    // تعداد اسلایدها بر اساس هر اسلاید ۳ خبر
+    const slideCount = Math.ceil(limitedPosts.length / 3);
+
+    const handlePrev = () => {
+        setCurrent((prev) => (prev === 0 ? slideCount - 1 : prev - 1));
     };
-    const [emblaRef] = useEmblaCarousel(options, [Autoplay()]);
+
+    const handleNext = () => {
+        setCurrent((prev) => (prev === slideCount - 1 ? 0 : prev + 1));
+    };
+
+    // گرفتن ۳ خبر برای هر اسلاید
+    const getSlidePosts = () => {
+        const start = current * 3;
+        return limitedPosts.slice(start, start + 3);
+    };
 
     return (
-        <div className=" h-fit mb-5 mx-auto overflow-hidden">
+        <div
+            style={{ backgroundImage: `url(${wire.src})` }}
+            className="h-fit mt-24 bg-[#F3F6EB] p-8 sm:p-24 mx-auto overflow-hidden"
+        >
             <div className="flex flex-col items-center mb-16 gap-5 text-[#2D1F44]">
-                <h2 className=" md:text-4xl text-[#2D1F44] text-2xl font-bold tracking-tight text-center leading-tight">
-                    {title || " اخبار و مقالات"}
+                <h2 className="md:text-4xl text-[#2D1F44] text-2xl font-bold tracking-tight text-center leading-tight">
+                    {title || "اخبار و مقالات"}
                 </h2>
-                <p className="hidden md:block text-xl sm:text-xl font-base tracking-tight text-center leading-tight">
-                    جدیدترین اخبار و مطالب تخصصی حوزه آموزش آنلاین بهلند را با ما دنبال
-                    کنید{" "}
+                <p className="block text-xl sm:text-xl font-base tracking-tight text-center leading-tight">
+                    جدیدترین اخبار و مطالب تخصصی حوزه آموزش آنلاین بهلند را با ما دنبال کنید
                 </p>
             </div>
-            {/* دسکتاپ و تبلت: اسلایدر */}
-            {!mobile && (
-                <div className="block">
-                    <div className="embla__viewport" ref={emblaRef}>
-                        <div className="embla__container flex">
-                            {limitedPosts.map((item, idx) => (
+
+            {/* اسلایدر ساده با دکمه عقب/جلو */}
+            {limitedPosts.length > 0 && (
+                <div className="flex flex-col items-center">
+                    <div className="flex items-center gap-4  w-full h-40">
+                        <button
+                            onClick={handlePrev}
+                            className="p-2 rounded-full bg-white shadow hover:bg-gray-100 transition"
+                            aria-label="قبلی"
+                        >
+                            <NavigateNextIcon className="rotate-180 text-black" />
+                        </button>
+                        <div className="flex gap-4">
+                            {getSlidePosts().map((item, idx) => (
                                 <Link
                                     href={`/posts/${item.slug}`}
-                                    passHref
-                                    key={idx}
-                                    className="embla__slide flex-shrink-0 w-[30%] mx-2 bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] rounded-xl p-6 text-[#2D1F44] shadow-lg transition-transform duration-300 text-center align-middle"
+                                    key={item.slug}
+                                    className="flex-shrink-0 text-black drop-shadow-xl h-40 w-[22em] rounded-lg bg-white p-3 flex flex-col justify-between"
                                 >
-                                    <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                                    <header className="flex items-center p-2 gap-4">
+                                        <Badge
+                                            className="h-4 w-4 bg-green-500 rounded-full font-mono tabular-nums"
+                                            variant="destructive"
+                                        ></Badge>
+                                        <p className="font-bold text-lg truncate">{item.title}</p>
+                                    </header>
+                                    <span
+                                        className="block my-2 text-sm"
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                item.content
+                                                    .replace(/<[^>]+>/g, " ")
+                                                    .split(/\s+/)
+                                                    .slice(0, 10)
+                                                    .join(" ") +
+                                                (item.content.split(/\s+/).length > 50 ? "..." : ""),
+                                        }}
+                                    />
+                                    <hr className="mt-2" />
+                                    <div className="flex items-center justify-between p-2">
+                                        <div className="flex items-center gap-3">
+                                            <CalendarMonthIcon sx={{ size: "24px" }} />
+                                            <p className="text-sm ">
+                                                {item.createdAt
+                                                    ? new Date(item.createdAt).toLocaleDateString(
+                                                        "fa-IR",
+                                                        {
+                                                            year: "numeric",
+                                                            month: "long",
+                                                            day: "numeric",
+                                                            weekday: "long",
+                                                        }
+                                                    )
+                                                    : "تاریخ نامشخص"}
+                                            </p>
+                                        </div>
+                                        <p className="text-sm text-[#79C699] flex items-center gap-1">
+                                            مشاهده بیشتر
+                                            <NavigateBeforeIcon />
+                                        </p>
+                                    </div>
                                 </Link>
                             ))}
                         </div>
+                        <button
+                            onClick={handleNext}
+                            className="p-2 rounded-full bg-white shadow hover:bg-gray-100 transition"
+                            aria-label="بعدی"
+                        >
+                            <NavigateNextIcon className="text-black" />
+                        </button>
                     </div>
-                </div>
-            )}
-            {/* موبایل: لیست ساده */}
-            {mobile && (
-                <div className="block">
-                    <div className="flex flex-col gap-4">
-                        {limitedPosts.map((item, idx) => (
-                            <Link
-                                href={`/posts/${item.slug}`}
-                                passHref
+                    {/* نمایش شماره اسلاید */}
+                    <div className="mt-4 flex gap-1">
+                        {Array.from({ length: slideCount }).map((_, idx) => (
+                            <span
                                 key={idx}
-                                className="bg-[linear-gradient(125deg,_white_-40%,_#75C696_50%,_white_150%)] rounded-xl p-4 text-[#2D1F44] shadow-lg text-center"
-                            >
-                                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                            </Link>
+                                className={`w-2 h-2 rounded-full ${idx === current ? "bg-[#79C699]" : "bg-gray-300"}`}
+                            />
                         ))}
                     </div>
                 </div>

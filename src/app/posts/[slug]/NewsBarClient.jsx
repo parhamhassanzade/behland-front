@@ -6,5 +6,5 @@ import NewsBar from "@/components/ui/News/NewsBar";
 // const NewsBar = dynamic(() => import("@/components/ui/News/NewsBar"), { ssr: false });
 
 export default function NewsBarClient(props) {
-    return <NewsBar {...props} />;
+    return <NewsBar id="news" {...props} />;
 }

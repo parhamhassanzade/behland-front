@@ -120,6 +120,7 @@ body {
 .embla__viewport,
 .embla__container {
   direction: ltr !important;
+  width: 100%;
 }
 
 /* Basic editor styles */

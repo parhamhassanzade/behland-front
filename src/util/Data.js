@@ -8,25 +8,19 @@ import Parham from "../assets/Images/TeamMemebers/parham.png";
 import Unknown from "../assets/Images/TeamMemebers/Unknown.png";
 import Alireza from "../assets/Images/TeamMemebers/Alireza.png";
 import Yassaman from "../assets/Images/TeamMemebers/Yassaman.png";
+import Abbasi from "../assets/Images/TeamMemebers/Abbasi.png";
 
 export const services = [
     {
-        name: "امیرعلی نیرومند",
+        name: "امیرعلی نیرومند زال پور",
         title: "Founder & CEO",
-        role: [
-            "مسئول نظارت کلی",
-            "مدیریت استراتژیک پروژه",
-            "تعیین مسیر رشد",
-        ],
+        role: ["مسئول نظارت کلی", "مدیریت استراتژیک پروژه", "تعیین مسیر رشد"],
         image: Amirali,
     },
     {
         name: "مهدی خسروی",
         title: "Technical Lead ",
-        role: [
-            "مسئول توسعه ربات تلگرام",
-            "مدیریت زیرساخت فنی",
-        ],
+        role: ["مسئول توسعه ربات تلگرام", "مدیریت زیرساخت فنی"],
         image: Mehdi,
     },
     {
@@ -36,41 +30,33 @@ export const services = [
         image: Parham,
     },
     {
-        name: "امیرحسین اسدیار",
+        name: "فاطمه عباسی",
+        title: "Senior  UI/UX Designer ",
+        role: [],
+        image: Abbasi,
+    },
+    {
+        name: "مهرداد نظری",
         title: "Content & Market Analysis Lead ",
-        role: [
-            "تدوین تحلیل‌های بازار",
-            "سیگنال‌دهی",
-            "مدیریت محتوای تحلیلی",
-        ],
+        role: ["تدوین تحلیل‌های بازار", "سیگنال‌دهی", "مدیریت محتوای تحلیلی"],
         image: Amirhossein,
     },
     {
-        name: "علیرضا نیرومند",
+        name: "علیرضا نیرومند زال پور",
         title: "Educational Content Lead ",
-        role: [
-            "طراحی دوره‌های آموزشی",
-            "تدوین مسیر رشد کاربران",
-        ],
+        role: ["طراحی دوره‌های آموزشی", "تدوین مسیر رشد کاربران"],
         image: Alireza,
     },
     {
         name: "نسرین قادری",
-        title: "Project Coordinator & Documentation Specialist ",
-        role: [
-            "تنظیم اسناد پروژه",
-            "هماهنگی تیم",
-            "مدیریت زمان‌بندی مستندات",
-        ],
+        title: "SEO & Documentation Specialist ",
+        role: ["تنظیم اسناد پروژه", "هماهنگی تیم", "مدیریت زمان‌بندی مستندات"],
         image: Nasrin,
     },
     {
         name: "شیوا محققی",
         title: "PR Development Consultant ",
-        role: [
-            "مشاوره در زمینه برندینگ",
-            "ارتباط با مخاطبان",
-        ],
+        role: ["مشاوره در زمینه برندینگ", "ارتباط با مخاطبان"],
         image: Shiva,
     },
     {
@@ -84,13 +70,157 @@ export const services = [
         image: Davood,
     },
     {
-        name: " یاسمن طاهری",
-        title: "Graphic Designer ",
+        name: " یاسمین طاهری",
+        title: "Senior Visual Designer ",
         role: [
             "تحلیل داده‌های کاربران",
             "بررسی بازارهای هدف",
             "تدوین استراتژی‌های ورود به بازار",
         ],
         image: Yassaman,
+    },
+];
+
+export const phases = [
+    {
+        title: "فاز اول: آماده‌سازی توسعه اولیه",
+        number: 1,
+        tasks: [
+            {
+                desc: "طراحی مدل اقتصادی پروژه و مسیر رشد کاربران",
+                status: true,
+            },
+            { desc: "جذب اعضای اولیه تیم و تعیین نقش‌ها", status: true },
+            {
+                desc: "توسعه نسخه ابتدایی پلتفرم از طریق ربات تلگرام (نمونه اولیه یا MVP)",
+                status: true,
+            },
+            { desc: "تدوین ساختار آموزشی سطوح VIP 0 و VIP1", status: true },
+            {
+                desc: "طراحی نسخه اولیه سایت و آماده‌سازی زیرساخت‌های فروش",
+                status: true,
+            },
+
+
+            {
+                desc: "تهیه اسناد رسمی، پرزنتیشن‌ها و مطالب معرفی پروژه",
+                status: true,
+            },
+            {
+                desc: " آماده‌سازی تبلیغات مرحله اول فروش خصوصی توکن BEHT از طریق کانال «به‌تحلیل»",
+                status: true,
+            },
+            {
+                desc: "تست اولیه کیف پول کاربران و ثبت اطلاعات حساب‌ها",
+                status: false,
+            },
+            { desc: "امنیت و انتشار توکن BEHT روی بلاک‌چین TON", status: false },
+
+        ],
+        active: true,
+    },
+    {
+        title: "فاز ۲: فروش مرحله‌ای و تقویت زیرساخت",
+        number: 2,
+        active: false,
+        tasks: [
+            {
+                desc: " جذب نهایی اعضای تخصصی تیم و تثبیت ساختار درون‌سازمانی",
+                status: false,
+            },
+            {
+                desc: " مینت توکن و انتقال آن به والت های مربوط",
+                status: false,
+            },
+            {
+                desc: "  اجرای مرحله اول و دوم پیش‌فروش توکن BEHT لاز طریق کانال «به‌تحلیل»",
+                status: false,
+            },
+            {
+                desc: " نهایی‌سازی توسعه و تست ربات تلگرام",
+                status: false,
+            },
+            {
+                desc: "اجرای اقدامات حقوقی از جمله احراز هویت کاربران (KYC)، ثبت برند و سیاست‌های حفاظت از داده‌ها",
+                status: false,
+            },
+            {
+                desc: " بارگذاری کامل دوره‌های آموزشی سطوح VIP 0 و VIP 1",
+                status: false,
+            },
+            {
+                desc: " تست زیرساخت کیف پول داخلی کاربران",
+                status: false,
+            },
+            {
+                desc: "آماده‌سازی نسخه نهایی سایت و اتصال آن به ربات تلگرام",
+                status: false,
+            },
+
+        ],
+    },
+    {
+        title: "فاز ۳: تکمیل زیرساخت، آموزش پیشرفته و NFT",
+        number: 3,
+        active: false,
+        tasks: [
+            {
+                desc: "  اجرای مرحله سوم و چهارم پیش‌فروش توکن در کانال «به‌تحلیل»",
+                status: false,
+            },
+            {
+                desc: "  اجرای مرحله پنجم فروش توکن از طریق یک صرافی غیرمتمرکز (DEX)",
+                status: false,
+            },
+            {
+                desc: "  نهایی‌سازی اتصال کامل سایت و ربات تلگرام",
+                status: false,
+            },
+            {
+                desc: "  آغاز توسعه مینی‌اپ تلگرام با قابلیت‌های پیشرفته",
+                status: false,
+            },
+            {
+                desc: "  بارگذاری کامل دوره‌های آموزشی سطوح VIP 2 و VIP 3",
+                status: false,
+            },
+            {
+                desc: "  طراحی و انتشار نسخه‌های اولیه NFT برای کاربران یادگیرنده",
+                status: false,
+            },
+            {
+                desc: "  تکمیل توسعه کیف پول داخلی با نمایش دارایی‌ها، امتیازها و مسیر رشد کاربران",
+                status: false,
+            },
+        ],
+    },
+    {
+        title: "فاز ۴: گسترش بازار و آغاز فروش عمومی",
+        number: 4,
+        active: false,
+        tasks: [
+            { desc: "آغاز فروش عمومی توکن BEHT در مراحل «استیج اول» و «استیج دوم» از طریق صرافی‌های ایرانی", status: false },
+            { desc: "فراهم‌سازی امکان خرید و فروش توکن توسط کاربران داخلی", status: false },
+            { desc: "فعال‌سازی اشتراک VIP از طریق پرداخت توکن BEHT", status: false },
+            { desc: "انتشار رسمی NFTهای مسیر رشد و فراهم‌سازی امکان اشتراک‌گذاری آن‌ها در شبکه‌های اجتماعی", status: false },
+            { desc: "فعال‌سازی مسیرهای آموزشی سطوح VIP 0 تا 3 برای عموم کاربران", status: false },
+            { desc: "آغاز ترجمه و بارگذاری ویدیوهای آموزشی به زبان عربی", status: false },
+            { desc: "توسعه کیف پول اختصاصی با قابلیت‌های فریز و استیک توکن", status: false },
+            { desc: "راه‌اندازی نسخه وب با امکانات داشبورد مالی، رتبه‌بندی کاربران و مدیریت دارایی‌ها", status: false },
+            { desc: "انتشار نسخه پیشرفته مینی‌اپ تلگرام با قابلیت‌های تعاملی گسترده", status: false },
+            { desc: "شروع همکاری با صرافی‌ها و پارتنرهای داخلی و منطقه‌ای", status: false },
+        ],
+    },
+    {
+        title: "فاز ۵: تثبیت اقتصادی و رشد پایدار",
+        number: 5,
+        active: false,
+        tasks: [
+            { desc: "تکمیل دوره‌های آموزشی زبان عربی و آغاز تبلیغات در بازار عرب‌زبان", status: false },
+            { desc: "آغاز ترجمه و بارگذاری دوره‌های آموزشی به زبان انگلیسی", status: false },
+            { desc: "فعال‌سازی سیستم استیکینگ و ارائه پاداش به هولدرهای بلندمدت توکن BEHT", status: false },
+            { desc: "راه‌اندازی سیستم رأی‌گیری ساده (مدل DAO سبک) برای تصمیمات کلان پلتفرم", status: false },
+            { desc: "آغاز کمپین‌های تبلیغاتی بین‌المللی برای جذب کاربران جدید و توسعه بازار جهانی", status: false },
+        ],
     },
 ];
