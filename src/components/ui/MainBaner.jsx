@@ -46,57 +46,60 @@ function MainBaner() {
     return (
         <section
             style={{ backgroundImage: `url(${bannerBg.src})` }}
-            className="w-full relative"
+            className="w-full relative h-fit bg-cover bg-center p-4 sm:p-8 md:p-16 text-white flex flex-col items-center justify-center"
         >
-            <div className="w-full grid grid-cols-1 md:grid-cols-2">
-                <div className="w-full flex flex-col md:flex-row-reverse  justify-center items-center md:items-center">
-                    {/* موبایل: عکس بالا */}
-                    <div className="w-full flex md:hidden justify-center items-center order-1 mb-4 ">
-                        <Image src={BannerImg} alt="banner" />
+            <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center">
+                <div className="w-full flex  justify-center items-center mb-4">
+                    <Image src={BannerImg} alt="banner" />
+                </div>
+                {/* بخش راست: متن و تایمر */}
+                <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-2 sm:px-4">
+                    <div className="flex items-center justify-center w-full">
+                        <p className="text-[#4D4D4D] text-2xl sm:text-6xl md:text-8xl font-bold drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.15)] m-0 p-0 text-center w-fit lg:w-full">
+                            به‌لــــــــــند
+                        </p>
+                        <Image src={coin} alt="coin" className="w-8 sm:w-12 md:w-auto" />
                     </div>
-                    {/* نوشته و تایمر */}
-                    <div className="flex flex-col items-center justify-center w-full md:w-5/6 order-2 px-2 sm:px-4">
-                        <div className="flex items-center justify-center w-full">
-                            <p className="text-[#4D4D4D] text-2xl sm:text-6xl md:text-8xl font-bold drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.15)] m-0 p-0 text-center w-fit lg:w-full">
-                                به‌لــــــــــند
-                            </p>
-                            <Image src={coin} alt="coin" className="w-8 sm:w-12 md:w-auto   " />
-                        </div>
-                        <span className="text-[#4D4D4D] text-sm sm:text-base font-normal text-center w-full mt-2">
-                            به‌لند جاییه برای یادگیری، رشد و درآمد از مسیر بازی‌محور آموزش مالی. هر مرحله تو رو یک قدم به تحلیلگر شدن و استقلال مالی نزدیک‌تر می‌کنه.
-                        </span>
-                        <div className="w-full flex flex-col justify-start items-center mt-6 sm:mt-10">
-                            <p className="text-[#000000] text-base sm:text-xl font-bold w-full text-center">
-                                منتظرمون باشید
-                            </p>
-                            <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 items-center justify-center">
-                                {timeValues.map((num, idx, arr) => (
-                                    <React.Fragment key={idx}>
-                                        <div className="flex flex-col items-center">
-                                            <div className="p-[1px] rounded-lg bg-gradient-to-b from-purple-600 to-gray-400">
-                                                <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-white flex items-center justify-center text-purple-700 text-lg sm:text-xl font-bold">
-                                                    {num}
-                                                </div>
+                    <span className="text-[#4D4D4D] text-sm sm:text-base font-normal text-center w-full mt-2">
+                        به‌لند جاییه برای یادگیری، رشد و درآمد از مسیر بازی‌محور آموزش مالی. هر مرحله تو رو یک قدم به تحلیلگر شدن و استقلال مالی نزدیک‌تر می‌کنه.
+                    </span>
+                    <div className="w-full flex flex-col justify-start items-center mt-6 sm:mt-10">
+                        <p className="text-[#000000] text-base sm:text-xl font-bold w-full text-center">
+                            منتظرمون باشید
+                        </p>
+                        <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 items-center justify-center">
+                            {timeValues.map((num, idx, arr) => (
+                                <React.Fragment key={idx}>
+                                    <div className="flex flex-col items-center">
+                                        <div className="p-[1px] rounded-lg bg-gradient-to-b from-purple-600 to-gray-400">
+                                            <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-white flex items-center justify-center text-purple-700 text-lg sm:text-xl font-bold">
+                                                {num}
                                             </div>
-                                            <span className="mt-2 text-xs text-[#4D4D4D] font-semibold">
-                                                {labels[idx]}
-                                            </span>
                                         </div>
-                                        {idx < arr.length - 1 && (
-                                            <span className="text-xl sm:text-3xl font-bold text-[#4D4D4D] mx-1">
-
-                                            </span>
-                                        )}
-                                    </React.Fragment>
-                                ))}
-                            </div>
+                                        <span className="mt-2 text-xs text-[#4D4D4D] font-semibold">
+                                            {labels[idx]}
+                                        </span>
+                                    </div>
+                                    {idx < arr.length - 1 && (
+                                        <span className="text-xl sm:text-3xl font-bold text-[#4D4D4D] mx-1">
+                                            :
+                                        </span>
+                                    )}
+                                </React.Fragment>
+                            ))}
                         </div>
-                    </div>
-
-                    <div className="hidden md:flex justify-center items-center order-3 md:order-1   w-full col-span-2">
-                        <Image src={BannerImg} alt="banner" className="w-fit h-82" />
                     </div>
                 </div>
+                {/* بخش چپ: عکس فقط در دسکتاپ */}
+                {/* <div className="hidden w-1/2 justify-center items-center">
+                    <Image
+                        src={BannerImg}
+                        alt="banner"
+                        className="h-auto w-auto max-w-full max-h-[700px]" // مقدار افزایش یافته
+                    />
+                </div> */}
+                {/* موبایل: عکس بالا */}
+
             </div>
         </section>
     );
