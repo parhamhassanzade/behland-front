@@ -41,7 +41,7 @@ function WhyUs() {
 
                 <div className=" text-[#2D1F44]  w-full mt-6 ">
                     <div className="w-full h-fit relative ">
-                        <ColumnBlue CusStyle={"h-full -z-3"} />
+                        {/* <ColumnBlue CusStyle={"h-full -z-3"} /> */}
                         <h3 className="z-1 w-full flex justify-center items-center p-3 text-base font-bold">
                             چرا بهلند....
                         </h3>

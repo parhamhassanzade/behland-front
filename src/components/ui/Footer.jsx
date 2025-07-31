@@ -12,7 +12,7 @@ function Footer() {
     // Responsive Header with mobile menu
 
     return (
-        <footer className="w-full  text-[#fff] mt-auto p-5 relative">
+        <footer className="w-full  text-[#fff] mt-10 p-5 relative">
             {/* Arrow icon centered above the footer, 60% outside */}
             <div
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -24,10 +24,10 @@ function Footer() {
             >
                 <ArrowUpwardTwoToneIcon sx={{ fontSize: 45, color: "#fff" }} />
             </div>
-            <div className="bg-[#143446] grid grid-cols-2 rounded-lg">
+            <div className="bg-[#143446] grid md:grid-cols-2 grid-cols-1 p-5 md:p-0 rounded-lg">
                 <div className="flex items-center justify-center">
                     <nav className="text-[#fff]">
-                        <ul className="flex items-center justify-center space-x-4">
+                        <ul className="flex items-center justify-center space-x-4 md:text-base text-sm">
                             <li>
                                 <a href="#team" className="hover:text-gray-400 focus:underline">
                                     درباره ما
@@ -54,16 +54,19 @@ function Footer() {
                         </ul>
                     </nav>
                 </div>
-                <div className="flex items-center justify-center gap-4 p-4">
-                    <div className="flex items-center w-4/6 rounded-2xl overflow-hidden bg-[#FFFFFF26]/30">
+                <div className=" flex flex-col md:flex-row md:flex items-center justify-center gap-5 p-4 w-full md:mt-0 mt-3">
+                    <div className="flex items-center md:w-4/6 w-full rounded-2xl overflow-hidden bg-[#FFFFFF26]/30">
                         <Input type="email" placeholder="ایمیل خود را وارد کنید" className="rounded-full border-0" />
                         <Button className="text-black rounded-full bg-[#75C696]">
                             عضویت
                         </Button>
                     </div>
-                    <TelegramIcon />
-                    <LinkedInIcon />
-                    <InstagramIcon />
+                    <div className="flex items-center justify-center gap-4 text-[#fff]">
+
+                        <TelegramIcon />
+                        <LinkedInIcon />
+                        <InstagramIcon />
+                    </div>
                 </div>
             </div>
         </footer>

@@ -36,13 +36,12 @@ export function MenuMobile() {
                 <div className="mx-auto w-full text-white bg-gradient-to-l from-[#4c7798] to-[#263b4d]">
                     <DrawerHeader className="bg-transparent">
                         <DrawerTitle>BehLand</DrawerTitle>
-                        {/* <DrawerDescription>Set your daily activity goal.</DrawerDescription> */}
                     </DrawerHeader>
                     <nav className="py-6">
                         <ul className="flex flex-col gap-3 px-6">
                             <li>
                                 <a
-                                    href="#"
+                                    href="#home"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     خانه
@@ -50,34 +49,40 @@ export function MenuMobile() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#services"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
-                                    کیف پول و دارایی
+                                    خدمات ما
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#team"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
-                                    اتصال به ربات
+                                    تیم ما
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#roadmap"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
-                                    پیش فروش توکن
+                                    نقشه راه پروژه
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#whyus"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
-                                    آکادمی مالی
+                                    چرا بهلند
+                                </a>
+                                <a
+                                    href="#news"
+                                    className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
+                                >
+                                    اخبار
                                 </a>
                             </li>
                         </ul>
