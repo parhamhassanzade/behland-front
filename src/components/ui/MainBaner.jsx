@@ -1,30 +1,26 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import BannerImg from "../../assets/Images/BannerImg.png";
-import Image from "next/image";
-import coin from "../../assets/Images/coin.png";
-import bannerBg from "../../assets/Images/bannerBg.png";
-const labels = ["ثانیه", "دقیقه", "ساعت", "روز"];
-function MainBaner() {
+'use client';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import BannerImg from '../../assets/Images/BannerImg.png';
+import coin from '../../assets/Images/coin.png';
+import bannerBg from '../../assets/Images/bannerBg.png';
 
+const labels = ['قانیه', 'دقیقه', 'ساعت', 'روز'];
 
-
-
-
-    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+const MainBaner = () => {
+    const [timeLeft, setTimeLeft] = useState([0, 0, 0, 0]); // [days, hours, minutes, seconds]
     const [isFinished, setIsFinished] = useState(false);
 
     useEffect(() => {
-        const endTime = new Date(Date.now() + 4 * 24 * 60 * 60 * 1000);
+        const targetDate = new Date('2025-08-04T21:00:00+03:30');
 
-        const updateTimer = () => {
+        const calculateTimeLeft = () => {
             const now = new Date();
-            const diff = endTime - now;
+            const diff = targetDate.getTime() - now.getTime();
 
             if (diff <= 0) {
                 setIsFinished(true);
-                clearInterval(timerId);
-                return;
+                return [0, 0, 0, 0];
             }
 
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -32,16 +28,19 @@ function MainBaner() {
             const minutes = Math.floor((diff / (1000 * 60)) % 60);
             const seconds = Math.floor((diff / 1000) % 60);
 
-            setTimeLeft({ days, hours, minutes, seconds });
+            return [seconds, minutes, hours, days];
         };
 
-        updateTimer(); // مقدار اولیه
-        const timerId = setInterval(updateTimer, 1000);
+        const updateTimer = () => {
+            const newTime = calculateTimeLeft();
+            setTimeLeft(newTime);
+        };
 
-        return () => clearInterval(timerId); // پاک‌سازی
+        updateTimer(); // initial call
+        const interval = setInterval(updateTimer, 1000);
+
+        return () => clearInterval(interval);
     }, []);
-
-    const timeValues = [timeLeft.seconds, timeLeft.minutes, timeLeft.hours, timeLeft.days];
 
     return (
         <section
@@ -49,60 +48,58 @@ function MainBaner() {
             className="w-full relative h-fit bg-cover bg-center p-4 sm:p-8 md:p-16 text-white flex flex-col items-center justify-center"
         >
             <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center">
-                <div className="w-full flex  justify-center items-center mb-4">
+                <div className="w-full flex justify-center items-center mb-4">
                     <Image src={BannerImg} alt="banner" />
                 </div>
-                {/* بخش راست: متن و تایمر */}
+
+                {/* متن و تایمر */}
                 <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-2 sm:px-4">
                     <div className="flex items-center justify-center w-full">
-                        <p className="text-[#4D4D4D] text-2xl sm:text-6xl md:text-8xl font-bold drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.15)] m-0 p-0 text-center w-fit lg:w-full">
+                        <p className="text-[#4D4D4D] text-2xl sm:text-6xl md:text-8xl font-bold drop-shadow-[-5px_5px_0px_rgba(0,0,0,0.15)] text-center w-fit lg:w-full">
                             به‌لــــــــــند
                         </p>
                         <Image src={coin} alt="coin" className="w-8 sm:w-12 md:w-auto" />
                     </div>
+
                     <span className="text-[#4D4D4D] text-sm sm:text-base font-normal text-center w-full mt-2">
                         به‌لند جاییه برای یادگیری، رشد و درآمد از مسیر بازی‌محور آموزش مالی. هر مرحله تو رو یک قدم به تحلیلگر شدن و استقلال مالی نزدیک‌تر می‌کنه.
                     </span>
+
                     <div className="w-full flex flex-col justify-start items-center mt-6 sm:mt-10">
                         <p className="text-[#000000] text-base sm:text-xl font-bold w-full text-center">
                             منتظرمون باشید
                         </p>
-                        <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 items-center justify-center">
-                            {timeValues.map((num, idx, arr) => (
-                                <React.Fragment key={idx}>
-                                    <div className="flex flex-col items-center">
-                                        <div className="p-[1px] rounded-lg bg-gradient-to-b from-purple-600 to-gray-400">
-                                            <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-white flex items-center justify-center text-purple-700 text-lg sm:text-xl font-bold">
-                                                {num}
+
+                        {!isFinished ? (
+                            <div className="flex gap-2 sm:gap-4 p-2 sm:p-4 items-center justify-center">
+                                {timeLeft.map((num, idx) => (
+                                    <React.Fragment key={idx}>
+                                        <div className="flex flex-col items-center">
+                                            <div className="p-[1px] rounded-lg bg-gradient-to-b from-purple-600 to-gray-400">
+                                                <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-white flex items-center justify-center text-purple-700 text-lg sm:text-xl font-bold">
+                                                    {String(num).padStart(2, '0')}
+                                                </div>
                                             </div>
+                                            <span className="mt-2 text-xs text-[#4D4D4D] font-semibold">
+                                                {labels[idx]}
+                                            </span>
                                         </div>
-                                        <span className="mt-2 text-xs text-[#4D4D4D] font-semibold">
-                                            {labels[idx]}
-                                        </span>
-                                    </div>
-                                    {idx < arr.length - 1 && (
-                                        <span className="text-xl sm:text-3xl font-bold text-[#4D4D4D] mx-1">
-                                            :
-                                        </span>
-                                    )}
-                                </React.Fragment>
-                            ))}
-                        </div>
+                                        {idx < labels.length - 1 && (
+                                            <span className="text-xl sm:text-3xl font-bold text-[#4D4D4D] mx-1">
+                                                :
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="text-red-600 font-bold mt-4">زمان به پایان رسید!</p>
+                        )}
                     </div>
                 </div>
-                {/* بخش چپ: عکس فقط در دسکتاپ */}
-                {/* <div className="hidden w-1/2 justify-center items-center">
-                    <Image
-                        src={BannerImg}
-                        alt="banner"
-                        className="h-auto w-auto max-w-full max-h-[700px]" // مقدار افزایش یافته
-                    />
-                </div> */}
-                {/* موبایل: عکس بالا */}
-
             </div>
         </section>
     );
-}
+};
 
 export default MainBaner;
