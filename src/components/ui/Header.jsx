@@ -8,6 +8,7 @@ import { MenuMobile } from "./MenuMobile";
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import PersonIcon from '@mui/icons-material/Person';
 import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
 
 function Header() {
     return (
@@ -25,22 +26,22 @@ function Header() {
                 <nav className="text-[#2D1F44] hidden md:block">
                     <ul className="flex items-center justify-center space-x-4 font-bold">
                         <li>
-                            <a href="#home" className="hover:text-gray-400 focus:underline">خانه</a>
+                            <Link href="/#home" className="hover:text-gray-400 focus:underline">خانه</Link>
                         </li>
                         <li>
-                            <a href="#services" className="hover:text-gray-400 focus:underline">خدمات ما</a>
+                            <Link href="/#services" className="hover:text-gray-400 focus:underline">خدمات ما</Link>
                         </li>
                         <li>
-                            <a href="#team" className="hover:text-gray-400 focus:underline">تیم ما</a>
+                            <Link href="/#team" className="hover:text-gray-400 focus:underline">تیم ما</Link>
                         </li>
                         <li>
-                            <a href="#roadmap" className="hover:text-gray-400 focus:underline">نقشه راه پروژه</a>
+                            <Link href="/#roadmap" className="hover:text-gray-400 focus:underline">نقشه راه پروژه</Link>
                         </li>
                         <li>
-                            <a href="#whyus" className="hover:text-gray-400 focus:underline">چرا بهلند</a>
+                            <Link href="/#whyus" className="hover:text-gray-400 focus:underline">چرا بهلند</Link>
                         </li>
                         <li>
-                            <a href="#news" className="hover:text-gray-400 focus:underline">اخبار</a>
+                            <Link href="/#news" className="hover:text-gray-400 focus:underline">اخبار</Link>
                         </li>
                     </ul>
                 </nav>

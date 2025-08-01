@@ -12,6 +12,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
+import Link from "next/link";
 
 export function MenuMobile() {
     return (
@@ -40,50 +41,50 @@ export function MenuMobile() {
                     <nav className="py-6">
                         <ul className="flex flex-col gap-3 px-6">
                             <li>
-                                <a
-                                    href="#home"
+                                <Link
+                                    href="/#home"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     خانه
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#services"
+                                <Link
+                                    href="/#services"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     خدمات ما
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#team"
+                                <Link
+                                    href="/#team"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     تیم ما
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#roadmap"
+                                <Link
+                                    href="/#roadmap"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     نقشه راه پروژه
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#whyus"
+                                <Link
+                                    href="/#whyus"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     چرا بهلند
-                                </a>
-                                <a
-                                    href="#news"
+                                </Link>
+                                <Link
+                                    href="/#news"
                                     className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
                                 >
                                     اخبار
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
