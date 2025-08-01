@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NewsBarClient from "./NewsBarClient";
+import NewsColumn from "@/components/ui/News/NewsColumn";
 
 export default function PostPage({ params }) {
     const [post, setPost] = useState(null);
@@ -31,14 +32,15 @@ export default function PostPage({ params }) {
     if (!post) return <div>در حال بارگذاری...</div>;
 
     return (
-        <section className="grid grid-cols-3 mt-4 gap-5 p-4">
-            <div className="col-span-2">
+        <section className="grid grid-cols-1 md:grid-cols-3 mt-4 gap-5 p-4">
+            {/* بخش سمت راست (۲ ستون در دسکتاپ) */}
+            <div className="md:col-span-2">
                 <div className="bg-white text-black p-6 rounded-lg shadow-md flex justify-between items-center">
                     <h1 className="text-xl font-bold mb-2">{post.title}</h1>
                     <p>{convertDate(post.createdAt)}</p>
                 </div>
                 <div className="rounded-lg h-fit w-full flex flex-col items-right">
-                    <div className="mt-4 p-5 bg-white rounded-lg overflow-y-auto w-full flex flex-col ">
+                    <div className="mt-4 p-5 bg-white rounded-lg overflow-y-auto w-full flex flex-col">
                         <div
                             className="text-lg align-baseline text-justify"
                             dangerouslySetInnerHTML={{ __html: post.content }}
@@ -46,9 +48,12 @@ export default function PostPage({ params }) {
                     </div>
                 </div>
             </div>
-            <div className="cols-span-1">
-                <NewsBarClient newsLimit={6} mobile={true} title={"اخرین مقالات "} />
+
+            {/* ستون سمت چپ (۱ ستون در دسکتاپ) */}
+            <div className="md:col-span-1">
+                <NewsColumn />
             </div>
         </section>
+
     );
 }

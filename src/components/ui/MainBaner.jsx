@@ -4,6 +4,8 @@ import Image from 'next/image';
 import BannerImg from '../../assets/Images/BannerImg.png';
 import coin from '../../assets/Images/coin.png';
 import bannerBg from '../../assets/Images/bannerBg.png';
+import { Button } from './button';
+import { Telegram } from '@mui/icons-material';
 
 const labels = ['قانیه', 'دقیقه', 'ساعت', 'روز'];
 
@@ -93,8 +95,20 @@ const MainBaner = () => {
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-red-600 font-bold mt-4">زمان به پایان رسید!</p>
+                            <p className="text-red-600 font-bold mt-4">زمان انتظار به پایان رسید!</p>
                         )}
+
+                        <Button className={"mt-6  bg-[#2052e7] text-white hover:bg-[#3a3a3a] transition-colors"}>
+                            <a
+                                href="https://behland.ir"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white font-semibold felx gap-5"
+                            >
+                                ورود به ربات تلگرامی
+                                <Telegram />
+                            </a>
+                        </Button>
                     </div>
                 </div>
             </div>

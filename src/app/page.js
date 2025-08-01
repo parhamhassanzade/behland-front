@@ -12,11 +12,8 @@ export default function Home() {
 
   return (
     <main className="w-full min-h-screen text-white relative">
-
       <MainBaner />
-
       <Explain />
-
       <Services />
       <Team />
       <RoadmapUI />

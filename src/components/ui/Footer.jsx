@@ -11,6 +11,9 @@ import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 function Footer() {
     // Responsive Header with mobile menu
 
+    const Membering = () => {
+        alert("با تشکر از عضویت شما در خبرنامه بهلند، به زودی با شما تماس خواهیم گرفت.");
+    }
     return (
         <footer className="w-full  text-[#fff] mt-10 p-5 relative">
             {/* Arrow icon centered above the footer, 60% outside */}
@@ -57,7 +60,7 @@ function Footer() {
                 <div className=" flex flex-col md:flex-row md:flex items-center justify-center gap-5 p-4 w-full md:mt-0 mt-3">
                     <div className="flex items-center md:w-4/6 w-full rounded-2xl overflow-hidden bg-[#FFFFFF26]/30">
                         <Input type="email" placeholder="ایمیل خود را وارد کنید" className="rounded-full border-0" />
-                        <Button className="text-black rounded-full bg-[#75C696]">
+                        <Button onClick={() => Membering()} className="text-black rounded-full bg-[#75C696]">
                             عضویت
                         </Button>
                     </div>
