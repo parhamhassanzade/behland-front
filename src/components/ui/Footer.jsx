@@ -65,8 +65,14 @@ function Footer() {
                         </Button>
                     </div>
                     <div className="flex items-center justify-center gap-4 text-[#fff]">
+                        <a
+                            href="https://t.me/BehLand_Official"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
 
-                        <TelegramIcon />
+                            <TelegramIcon />
+                        </a>
                         <LinkedInIcon />
                         <InstagramIcon />
                     </div>

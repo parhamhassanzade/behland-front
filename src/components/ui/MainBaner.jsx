@@ -7,7 +7,7 @@ import bannerBg from '../../assets/Images/bannerBg.png';
 import { Button } from './button';
 import { Telegram } from '@mui/icons-material';
 
-const labels = ['قانیه', 'دقیقه', 'ساعت', 'روز'];
+const labels = ['ثانیه', 'دقیقه', 'ساعت', 'روز'];
 
 const MainBaner = () => {
     const [timeLeft, setTimeLeft] = useState([0, 0, 0, 0]); // [days, hours, minutes, seconds]
@@ -63,8 +63,8 @@ const MainBaner = () => {
                         <Image src={coin} alt="coin" className="w-8 sm:w-12 md:w-auto" />
                     </div>
 
-                    <span className="text-[#4D4D4D] text-sm sm:text-base font-normal text-center w-full mt-2">
-                        به‌لند جاییه برای یادگیری، رشد و درآمد از مسیر بازی‌محور آموزش مالی. هر مرحله تو رو یک قدم به تحلیلگر شدن و استقلال مالی نزدیک‌تر می‌کنه.
+                    <span className="text-[#4D4D4D] text-lg sm:text-lg  text-center w-full mt-3 font-bold">
+                        تحولی در یادگیری هدفمند
                     </span>
 
                     <div className="w-full flex flex-col justify-start items-center mt-6 sm:mt-10">
@@ -100,7 +100,7 @@ const MainBaner = () => {
 
                         <Button className={"mt-6  bg-[#2052e7] text-white hover:bg-[#3a3a3a] transition-colors"}>
                             <a
-                                href="https://behland.ir"
+                                href="https://t.me/behland_bot"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white font-semibold felx gap-5"
