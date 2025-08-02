@@ -14,7 +14,7 @@ const MainBaner = () => {
     const [isFinished, setIsFinished] = useState(false);
 
     useEffect(() => {
-        const targetDate = new Date('2025-08-04T21:00:00+03:30');
+        const targetDate = new Date('2025-08-05T21:00:00+03:30');
 
         const calculateTimeLeft = () => {
             const now = new Date();
