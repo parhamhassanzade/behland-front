@@ -64,7 +64,7 @@ function NewsBar({ newsLimit = 9, title }) {
                     }}
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow"
                 >
-                    <NavigateNextIcon className="text-black rotate-180" />
+                    <NavigateNextIcon className="text-black " />
                 </button>
 
                 <div
@@ -123,7 +123,7 @@ function NewsBar({ newsLimit = 9, title }) {
                     }}
                     className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow"
                 >
-                    <NavigateNextIcon className="text-black " />
+                    <NavigateNextIcon className="text-black rotate-180" />
                 </button>
             </div>
 
