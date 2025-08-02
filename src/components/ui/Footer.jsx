@@ -8,6 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Input } from "@/components/ui/input"
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
+import Link from "next/link";
 function Footer() {
     // Responsive Header with mobile menu
 
@@ -32,27 +33,22 @@ function Footer() {
                     <nav className="text-[#fff]">
                         <ul className="flex items-center justify-center space-x-4 md:text-base text-sm">
                             <li>
-                                <a href="#team" className="hover:text-gray-400 focus:underline">
-                                    درباره ما
-                                </a>
+                                <Link href="/#home" className="hover:text-gray-400 focus:underline">خانه</Link>
                             </li>
                             <li>
-                                <a
-                                    href="#roadmap"
-                                    className="hover:text-gray-400 focus:underline"
-                                >
-                                    تماس با ما
-                                </a>
+                                <Link href="/#services" className="hover:text-gray-400 focus:underline">خدمات ما</Link>
                             </li>
                             <li>
-                                <a href="#whyus" className="hover:text-gray-400 focus:underline">
-                                    حریم خصوصی
-                                </a>
+                                <Link href="/#team" className="hover:text-gray-400 focus:underline">تیم ما</Link>
                             </li>
                             <li>
-                                <a href="#whyus" className="hover:text-gray-400 focus:underline">
-                                    شرایط استفاده
-                                </a>
+                                <Link href="/#roadmap" className="hover:text-gray-400 focus:underline">نقشه راه پروژه</Link>
+                            </li>
+                            <li>
+                                <Link href="/#whyus" className="hover:text-gray-400 focus:underline">چرا بهلند</Link>
+                            </li>
+                            <li>
+                                <Link href="/#news" className="hover:text-gray-400 focus:underline">اخبار</Link>
                             </li>
                         </ul>
                     </nav>

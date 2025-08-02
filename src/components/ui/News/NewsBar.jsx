@@ -45,6 +45,7 @@ function NewsBar({ newsLimit = 9, title }) {
 
     return (
         <div
+            id="news"
             style={{ backgroundImage: `url(${wire.src})` }}
             className="h-fit mt-24 bg-[#F3F6EB] p-8 sm:p-24 mx-auto overflow-hidden"
         >
