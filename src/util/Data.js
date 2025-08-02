@@ -237,7 +237,7 @@ export const BarDetails = [
         textColor: "rgba(0, 126, 165, 1)"
     },
     {
-        title: "۲۵٪ کاربران یادگیرنده و استخراج‌کننده",
+        title: "۲۵٪ صندوق توسعه و رشد اکوسیستم",
         textColor: "rgba(127, 108, 220, 1)",
         bg: "rgba(127, 108, 220, 0.1)"
     },
@@ -257,7 +257,7 @@ export const BarDetails = [
         bg: "rgba(178, 1, 194, 0.1)"
     },
     {
-        title: "۱۰٪ صندوق توسعه و رشد اکوسیستم",
+        title: "۱۰٪ فروش مرحله ای",
         textColor: "rgba(62, 40, 174, 1)",
         bg: "rgba(62, 40, 174, 0.1)"
     },
