@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import barChart from "../../../assets/images/BarChart.png";
+import BarChart from "../../../assets/Images/BarChart.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BarDetails } from "@/util/Data";
@@ -56,7 +56,7 @@ export default function Token() {
                 </div>
             </div>
             <div className="col-span-1 flex flex-col justify-center items-center">
-                <Image src={barChart} alt="barChart" />
+                <Image src={BarChart} alt="BarChart" />
             </div>
         </div>
     );
