@@ -88,7 +88,7 @@ const MainBaner = () => {
                                         </div>
                                         {idx < labels.length - 1 && (
                                             <span className="text-xl sm:text-3xl font-bold text-[#4D4D4D] mx-1">
-                                                :
+
                                             </span>
                                         )}
                                     </React.Fragment>
