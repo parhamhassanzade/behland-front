@@ -28,7 +28,7 @@ function NewsBar({ newsLimit = 9, title }) {
     }, []);
 
     const limitedPosts = posts.slice(0, newsLimit);
-    const slideCount = Math.ceil(limitedPosts.length / 2);
+    const slideCount = Math.ceil(limitedPosts.length / 3);
 
     const handlePrev = () => {
         setCurrent((prev) => (prev === 0 ? slideCount - 1 : prev - 1));
@@ -39,8 +39,8 @@ function NewsBar({ newsLimit = 9, title }) {
     };
 
     const getSlidePosts = () => {
-        const start = current * 2;
-        return limitedPosts.slice(start, start + 2);
+        const start = current * 3;
+        return limitedPosts.slice(start, start + 3);
     };
 
     return (

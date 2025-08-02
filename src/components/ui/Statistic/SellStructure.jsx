@@ -1,8 +1,8 @@
 import { saleStages } from "@/util/Data";
 import React, { useRef } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import wire from "../../../assets/Images/wire.png";
 export default function SellStructure() {
-
     const scrollRef = useRef(null);
 
     const scroll = (direction) => {
@@ -14,22 +14,29 @@ export default function SellStructure() {
         }
     };
     return (
-        <section className="w-full p-4  flex  items-center flex-col justify-center">
-            <div className="w-11/12 bg-[#F3F6EB] h-fit   flex flex-col items-center justify-center  rounded-xl">
+        <section
+            style={{ backgroundImage: `url(${wire.src})` }}
+            id="sell_Token"
+            className="w-full p-4  rounded-lg mt-24  flex  items-center flex-col justify-center"
+        >
+            <div className="w-11/12 h-fit   flex flex-col items-center justify-center  rounded-xl">
                 <div className="flex flex-col items-center justify-center  gap-5 p-4 ">
-                    <p className="text-xl text-black font-semibold tracking-tight text-center leading-tight">
-                        ساختار فروش مرحله‌ای (۱ میلیون توکن):{" "}
-                    </p>
-                    <p className="text-base text-black  tracking-tight text-center leading-tight ">
-                        از کل ده میلیون توکن بهلند فقط ده درصد یعنی یک میلیون توکن برای فروش در دسترس خواهد بود فروش توکن در ۷ مرحله انجام می‌شود که در هر مرحله قیمت و شرایط خرید متفاوت خواهد بود:
+                    <h2 className=" text-[#2D1F44] text-2xl sm:text-5xl font-bold tracking-tight text-center leading-tight">
+                        ساختار فروش مرحله‌ای{" "}
+                    </h2>
+                    <p className="text-xl text-black  tracking-tight text-center leading-tight ">
+                        از کل ده میلیون توکن بهلند فقط ده درصد یعنی یک میلیون توکن برای فروش
+                        در دسترس خواهد بود فروش توکن در ۷ مرحله انجام می‌شود که در هر مرحله
+                        قیمت و شرایط خرید متفاوت خواهد بود{" "}
                     </p>
                 </div>
             </div>
 
-
-            <div className="space-y-4 p-4 w-full">
+            <div
+                style={{ backgroundImage: `url(${wire.src})` }}
+                className="space-y-4 p-4 w-full bg-[#F3F6EB] rounded-xl "
+            >
                 {/* Scroll buttons - mobile only */}
-
 
                 {/* Cards */}
                 <div
@@ -43,7 +50,9 @@ export default function SellStructure() {
                                 } bg-white p-3 shadow-sm transition-all hover:border-green-500 hover:shadow-lg space-y-2`}
                         >
                             <div className="flex items-center justify-start gap-2">
-                                <h3 className="text-sm font-bold text-right text-black">{stage.title}</h3>
+                                <h3 className="text-sm font-bold text-right text-black">
+                                    {stage.title}
+                                </h3>
                                 {stage.badge && (
                                     <span className="rounded-md bg-red-600 text-white text-xs px-2 py-1 font-semibold">
                                         {stage.badge}
@@ -81,7 +90,6 @@ export default function SellStructure() {
                     </button>
                 </div>
             </div>
-
         </section>
     );
 }

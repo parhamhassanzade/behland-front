@@ -9,17 +9,21 @@ import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import PersonIcon from '@mui/icons-material/Person';
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link";
+import { Telegram } from '@mui/icons-material';
+
 
 function Header() {
+
+
     return (
         <header className="bg-white w-full p-3 md:p-5 border-b-4 border-[#E9E9E9] grid md:grid-cols-3 grid-cols-4 items-center">
             {/* موبایل منو */}
             <MenuMobile />
 
             {/* لوگو وسط */}
-            <div className="col-span-1 flex items-center justify-center">
+            <Link href="/#home" className="col-span-1 flex items-center justify-center">
                 <Image src={logo} alt="Logo" className="w-15 h-10 md:w-20 md:h-16" />
-            </div>
+            </Link>
 
             {/* منوی دسکتاپ */}
             <div className="col-span-1 flex justify-center items-center">
@@ -38,11 +42,18 @@ function Header() {
                             <Link href="/#roadmap" className="hover:text-gray-400 focus:underline">نقشه راه پروژه</Link>
                         </li>
                         <li>
+                            <Link href="/#news" className="hover:text-gray-400 focus:underline">اخبار</Link>
+                        </li>
+                        <li>
                             <Link href="/#whyus" className="hover:text-gray-400 focus:underline">چرا بهلند</Link>
                         </li>
                         <li>
-                            <Link href="/#news" className="hover:text-gray-400 focus:underline">اخبار</Link>
+                            <Link href="/#beht" className="hover:text-gray-400 focus:underline">توکن BEHT</Link>
                         </li>
+                        <li>
+                            <Link href="/#sell_Token" className="hover:text-gray-400 focus:underline">فروش توکن</Link>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
@@ -53,8 +64,22 @@ function Header() {
                     <PublicOutlinedIcon sx={{ color: "#543787" }} />
                 </Button>
                 <Button className="rounded-2xl bg-[#543787] text-sm flex items-center gap-1 px-3 py-2">
-                    <PersonIcon sx={{ color: "white" }} />
-                    <p className="hidden md:block text-white">ورود/ثبت نام</p>
+                    <a href="https://t.me/behland_bot"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <Telegram sx={{ color: "white" }} />
+                    </a>
+                    <a
+                        href="https://t.me/behland_bot"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white font-semibold felx gap-5 hidden md:block"
+                    >
+                        ورود به ربات تلگرامی
+
+                    </a>
+                    {/* <p className="hidden md:block text-white">ورود/ثبت نام</p> */}
                 </Button>
             </div>
         </header>

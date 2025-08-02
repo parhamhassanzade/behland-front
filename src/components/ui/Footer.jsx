@@ -50,6 +50,12 @@ function Footer() {
                             <li>
                                 <Link href="/#news" className="hover:text-gray-400 focus:underline">اخبار</Link>
                             </li>
+                            <li>
+                                <Link href="/#beht" className="hover:text-gray-400 focus:underline">توکن BEHT</Link>
+                            </li>
+                            <li>
+                                <Link href="/#sell_Token" className="hover:text-gray-400 focus:underline">فروش توکن</Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>

@@ -86,6 +86,20 @@ export function MenuMobile() {
                                     اخبار
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    href="/#beht"
+                                    className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
+                                >
+                                    توکن BEHT
+                                </Link>
+                                <Link
+                                    href="/#sell_Token"
+                                    className="block rounded-lg px-4 py-2 transition-colors hover:bg-white/10 hover:text-gray-200 focus:bg-white/20 focus:outline-none"
+                                >
+                                    فروش توکن
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
 
